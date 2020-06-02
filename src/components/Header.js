@@ -9,9 +9,13 @@ const Navbar = styled.div`
   min-height: 4rem;
   position: sticky;
   top: 0;
-  background-color: powderblue;
+  background-color: #5DADE2 ;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
   padding: .5rem 1rem;
+
+  @media (max-width: 768px) {
+    background-color: pink;
+  }
 `
 
 const NavMenu = styled.div`

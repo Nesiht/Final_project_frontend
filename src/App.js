@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { user } from "./reducers/user"
+import { LandingPage } from './components/LandingPage'
 
 const reducer = combineReducers({
 	user: user.reducer
@@ -18,6 +19,7 @@ export const App = () => {
           <Route path="/" exact>
             {/* COMPONENT LANDING PAGE HERE */}
             <p>Hello world!</p>
+            <LandingPage />
           </Route>
           <Route path="/url/:variable" exact>
             {/* UNIQUE COMPONENT HERE FOR EXAMPLE */}

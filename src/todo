@@ -1,0 +1,25 @@
+"/" -> Landing page
+  - Information (component) ( text , img )
+  - CTA, Registers user (component) ( text, img, form, btn)
+  - Features description (component) ( text, img )
+  - Login (component) ( text, img, form, btn )
+  - Footer (component) ( text, link )
+
+  Mobile first
+
+  "/lockerRoom/:userID" -> User dashboard
+    - Overview (component)
+      - X days since last post
+      - Articles to read
+    - Create new entry (component)
+    - Calendar overview to find/read old entries (component)
+
+
+1. Create Landing page component X
+2. Create CTA component X
+3. Create Button component X
+4. Create Features description component X
+5. Create Login component
+6. Create Footer component
+7. Create basic styling
+8. Testing creating new user and login users

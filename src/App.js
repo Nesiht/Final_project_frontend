@@ -5,6 +5,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { user } from "./reducers/user"
 import { LandingPage } from './components/LandingPage'
 
+// TEST
+import { Btn } from 'components/Btn'
+
 const reducer = combineReducers({
 	user: user.reducer
 });
@@ -17,13 +20,17 @@ export const App = () => {
       <BrowserRouter>
         <Switch>
           <Route path="/" exact>
-            {/* COMPONENT LANDING PAGE HERE */}
-            <p>Hello world!</p>
             <LandingPage />
           </Route>
           <Route path="/url/:variable" exact>
             {/* UNIQUE COMPONENT HERE FOR EXAMPLE */}
           </Route>
+
+          {/* TEST */}
+          <Route path="/test" exact>
+            <Btn />
+          </Route>
+          
         </Switch>
       </BrowserRouter>
     </Provider>

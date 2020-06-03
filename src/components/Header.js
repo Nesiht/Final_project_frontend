@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Navbar = styled.div`
@@ -32,13 +33,17 @@ export const Header = () => {
     <>
       <Navbar>
         <NavMenu>
-          <Span>Home</Span>
+          <Link to="/">
+            Home
+          </Link>
           <Span>Features</Span>
           <Span>Articles</Span>
           <Span>Testimonials</Span>
         </NavMenu>
         <NavMenu marginLeft>
-          <Span>Login</Span>
+          <Link to="/login">
+            Login
+          </Link>
           <Span>Sign in</Span>
         </NavMenu>
       </Navbar>

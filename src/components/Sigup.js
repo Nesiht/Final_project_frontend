@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Btn } from 'components/Btn'
 import { user } from '../reducers/user'
 
-const signUpUrl = "localhost:8080/users"
+const signUpUrl = "http://localhost:8080/users"
 
 export const Signup = () => {
   const dispatch = useDispatch()
@@ -38,15 +38,32 @@ export const Signup = () => {
   }
 
   return (
-    <form>
+    <form onSubmit={(e) => handleSignUp(e)}>
+      <input
+      type = "text"
+      required
+      minLength={2}
+      maxLength={20}
+      value = { name }
+      placeholder = "name"
+      onChange = {event => setName(event.target.value)}
+      />
       <input 
-        type = "email"
-        placeholder ="email"
-        /><br/>
+      type="email"
+      required
+      minLength={3}
+      value = { email }
+      placeholder = "email"
+      onChange = {event => setEmail(event.target.value)}
+      />
       <input 
-        type = "password"
-        placeholder = "password"
-        /><br/>
+      type="password"
+      required
+      minLength={8}
+      value = { password }
+      placeholder = "password"
+      onChange = {event => setPassword(event.target.value)}
+      />
       <Btn type="submit" title="log in" />
     </form>
   )

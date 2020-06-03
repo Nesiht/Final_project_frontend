@@ -21,7 +21,11 @@ export const App = () => {
       <Header />
         <Switch>
           <Route path="/" exact>
-            <Redirect to ="/home" /> <LandingPage />
+            <Redirect to ="/home" exact/>
+          </Route>
+
+          <Route path="/home" exact>
+            <LandingPage />
           </Route>
 
           <Route path="/login" exact>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Navbar = styled.div`
@@ -23,9 +23,17 @@ const NavMenu = styled.div`
   margin-left: ${props => props.marginLeft ? 'auto' : 0 };
 `
 
-const Span = styled.span`
+const StyledLink = styled(NavLink)`
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
   padding-right: .5rem;
   padding-left: .5rem;
+
+  &.active {
+    color: #ffffff;
+    font-weight: 600;
+  }
 `
 
 export const Header = () => {
@@ -33,18 +41,18 @@ export const Header = () => {
     <>
       <Navbar>
         <NavMenu>
-          <Link to="/">
+          <StyledLink to="/home">
             Home
-          </Link>
-          <Span>Features</Span>
-          <Span>Articles</Span>
-          <Span>Testimonials</Span>
+          </StyledLink>
+          <StyledLink to="/test">Features</StyledLink>
+          <StyledLink to="/test1">Articles</StyledLink>
+          <StyledLink to="/test2">Testimonials</StyledLink>
         </NavMenu>
         <NavMenu marginLeft>
-          <Link to="/login">
+          <StyledLink to="/login">
             Login
-          </Link>
-          <Span>Sign in</Span>
+          </StyledLink>
+          <StyledLink to="/test3">Sign in</StyledLink>
         </NavMenu>
       </Navbar>
     </>

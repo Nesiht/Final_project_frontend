@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { user } from "./reducers/user"
 import { LandingPage } from './components/LandingPage'
 import { Login } from 'components/Login'
@@ -21,7 +21,7 @@ export const App = () => {
       <Header />
         <Switch>
           <Route path="/" exact>
-            <LandingPage />
+            <Redirect to ="/home" /> <LandingPage />
           </Route>
 
           <Route path="/login" exact>

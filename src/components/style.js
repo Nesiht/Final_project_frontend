@@ -112,3 +112,23 @@ export const StyledLink = styled(NavLink)`
     text-decoration: underline;
   }
 `
+
+
+// BTN
+
+export const Button = styled.button`
+  background-color: pink;
+  border: 1px solid transparent;
+  padding: .8rem 2rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  border-radius: .3rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+
+  &:hover {
+    background-color: #AF7AC5;
+    transition: 0.4s;
+  }
+`

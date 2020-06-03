@@ -1,7 +1,10 @@
 import React from 'react'
+import { Button } from 'components/style'
 
-export const Btn = () => {
+export const Btn = (props) => {
   return (
-    <button>Button</button>
+    <Button>
+      {props.title}
+    </Button>
   )
 }

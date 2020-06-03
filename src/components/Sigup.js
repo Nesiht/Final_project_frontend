@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Btn } from 'components/Btn'
 import { user } from '../reducers/user'
 
+// Styles
+import { Form, Title, Input } from 'components/style'
+
 const signUpUrl = "http://localhost:8080/users"
 
 export const Signup = () => {
@@ -10,6 +13,7 @@ export const Signup = () => {
   const [ name, setName ] = useState('')
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
+
   const accessToken = useSelector((store) => store.user.login.accessToken)
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
 
@@ -38,33 +42,36 @@ export const Signup = () => {
   }
 
   return (
-    <form onSubmit={(e) => handleSignUp(e)}>
-      <input
-      type = "text"
-      required
-      minLength={2}
-      maxLength={20}
-      value = { name }
-      placeholder = "name"
-      onChange = {event => setName(event.target.value)}
-      />
-      <input 
-      type="email"
-      required
-      minLength={3}
-      value = { email }
-      placeholder = "email"
-      onChange = {event => setEmail(event.target.value)}
-      />
-      <input 
-      type="password"
-      required
-      minLength={8}
-      value = { password }
-      placeholder = "password"
-      onChange = {event => setPassword(event.target.value)}
-      />
-      <Btn type="submit" title="log in" />
-    </form>
+    <>
+      <Form onSubmit={(e) => handleSignUp(e)}>
+        <Title>Sign up</Title>
+        <Input
+        type = "text"
+        required
+        minLength={2}
+        maxLength={20}
+        value = { name }
+        placeholder = "name"
+        onChange = {event => setName(event.target.value)}
+        />
+        <Input 
+        type="email"
+        required
+        minLength={3}
+        value = { email }
+        placeholder = "email"
+        onChange = {event => setEmail(event.target.value)}
+        />
+        <Input 
+        type="password"
+        required
+        minLength={8}
+        value = { password }
+        placeholder = "password"
+        onChange = {event => setPassword(event.target.value)}
+        />
+        <Btn type="submit" title="log in" />
+      </Form>
+    </>
   )
 }

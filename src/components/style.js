@@ -87,7 +87,7 @@ export const Navbar = styled.div`
   min-height: 4rem;
   position: sticky;
   top: 0;
-  background-color: #5DADE2 ;
+  background-color: pink ;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
   padding: .5rem 1rem;
 
@@ -134,3 +134,27 @@ export const Button = styled.button`
 `
 
 // SIGNUP
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 25vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3rem;
+
+  @media (max-width: 768px) {
+    max-width: 75vw;
+
+  }
+`
+
+export const Input = styled.input`
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid black;
+  border-radius: .3rem;
+`

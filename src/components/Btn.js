@@ -3,7 +3,7 @@ import { Button } from 'components/style'
 
 export const Btn = (props) => {
   return (
-    <Button>
+    <Button type={props.type}>
       {props.title}
     </Button>
   )

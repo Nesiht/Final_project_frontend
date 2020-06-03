@@ -65,7 +65,8 @@ export const Title = styled.h1`
 `
 
 export const Text = styled.p`
-  font-size: 1.5rem;
+  
+  font-size: ${props => props.small ? '0.9rem' : '1.5rem' };
   font-weight: 400;
   margin-bottom: 1.5rem;
   line-height: 1.5;
@@ -115,7 +116,6 @@ export const StyledLink = styled(NavLink)`
 
 
 // BTN
-
 export const Button = styled.button`
   background-color: pink;
   border: 1px solid transparent;
@@ -132,3 +132,5 @@ export const Button = styled.button`
     transition: 0.4s;
   }
 `
+
+// SIGNUP

@@ -6,6 +6,7 @@ import { user } from "./reducers/user"
 import { LandingPage } from './components/LandingPage'
 import { Login } from 'components/Login'
 import { Header } from 'components/Header'
+import { Signup } from 'components/Sigup'
 
 
 const reducer = combineReducers({
@@ -30,6 +31,10 @@ export const App = () => {
 
           <Route path="/login" exact>
             <Login />
+          </Route>
+
+          <Route path="/signup" exact>
+            <Signup />
           </Route>
 
           <Route path="/url/:variable" exact>

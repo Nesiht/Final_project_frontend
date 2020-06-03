@@ -1,37 +1,34 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { user } from '../reducers/user'
-import styled  from 'styled-components'
+import { Btn } from 'components/Btn'
 
-const logInURL = "localhost:8080/sessions";
+// Styles
+import { Form, Input, Title, Text } from 'components/style'
+
+const logInURL = "http://localhost:8080/sessions";
 
 export const Login = () => {
   const dispatch = useDispatch()
 
-  const accessToken = useSelector((store) => store.user.login.accessToken)
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
 
-  const [ name, setName ] = useState('')
+  const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
 
   const handleLoginSuccess = (loginResponse) => {
-    // For debugging only
     const statusMessage = JSON.stringify(loginResponse.message)
     dispatch(user.actions.setStatusMessage({ statusMessage }))
-
-    // Set the login info
     dispatch(
       user.actions.setAccessToken({ accessToken: loginResponse.accessToken })
-    );
+      );
     dispatch(
       user.actions.setUserId({ userId: loginResponse.userId }))
   }
-
-  const handleLoginFailed = (loginError) => {
-    const statusMessage = JSON.stringify(loginError.message)
-    dispatch(user.actions.setStatusMessage({ statusMessage }))
-    // Clear login values
-    dispatch(user.actions.logout())
+      
+  const ErrorMessage = (error) => {
+    const message = JSON.stringify(error.message)
+    dispatch(user.actions.setStatusMessage({ message }))
   }
 
   const handleLogin = (event) => {
@@ -39,34 +36,40 @@ export const Login = () => {
 
     fetch(logInURL, {
       method: 'POST',
-      body: JSON.stringify({ name: name, password: password }),
+      body: JSON.stringify({ email , password }),
       headers: { 'Content-Type': 'application/json' },
     })
       .then((res) => res.json())
       .then((json) => handleLoginSuccess(json))
-      .catch((err) => handleLoginFailed(err))
-      setName('')
+      .catch((err) => ErrorMessage(err))
+      setEmail('')
       setPassword('')
   };
     
   return (
-    <form onSubmit={(e) => handleLogin(e)}>
-      <input 
+    <Form onSubmit={(e) => handleLogin(e)}>
+      <Title>Login</Title>
+      <label>
+        Email
+      </label>
+      <Input 
         type = "email"
-        value = { name }
-        placeholder ="email"
-        onChange = {event => setName(event.target.value)}
-        /><br/>
-      <input 
+        value = { email }
+        placeholder ="Email"
+        onChange = {event => setEmail(event.target.value)}
+      />
+      <label>
+        Password
+      </label>
+      <Input 
         type = "password"
         value = { password }
-        placeholder = "password"
+        placeholder = "Password"
         onChange = {event => setPassword(event.target.value)}
-        /><br/>
-      <button 
-        type = "submit">
-        Log In
-      </button>
-    </form>
+      />
+
+        <Btn type="submit" title="Log in" />
+        {statusMessage && <Text small> {`${statusMessage}`} </Text>}
+    </Form>
   )
 }

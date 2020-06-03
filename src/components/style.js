@@ -151,10 +151,14 @@ export const Form = styled.form`
 `
 
 export const Input = styled.input`
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
+  padding: 0.7rem 0rem 0.7rem 0.7rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 2px solid black;
   border-radius: .3rem;
+
+  &:focus {
+  background-color: #AED6F1;
+  
+}
 `

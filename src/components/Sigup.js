@@ -4,22 +4,30 @@ import { Btn } from 'components/Btn'
 import { user } from '../reducers/user'
 
 // Styles
-import { Form, Title, Input } from 'components/style'
+import { Form, Title, Input, Text } from 'components/style'
 
 const signUpUrl = "http://localhost:8080/users"
 
 export const Signup = () => {
-  const dispatch = useDispatch()
   const [ name, setName ] = useState('')
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
+  const dispatch = useDispatch()
 
-  const accessToken = useSelector((store) => store.user.login.accessToken)
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
+
+  const handleLoginSuccess = (loginResponse) => {
+    const statusMessage = JSON.stringify(loginResponse.message)
+    dispatch(user.actions.setStatusMessage({ statusMessage }))
+    dispatch(
+      user.actions.setAccessToken({ accessToken: loginResponse.accessToken })
+      );
+    dispatch(
+      user.actions.setUserId({ userId: loginResponse.userId }))
+  }
 
   const ErrorMessage = (error) => {
     const message = JSON.stringify(error.message)
-
     dispatch(user.actions.setStatusMessage({ message }))
     dispatch(user.actions.logout())
   }
@@ -33,8 +41,8 @@ export const Signup = () => {
       headers: { 'Content-Type': 'application/json'}
     })
     .then((res) => res.json())
-    .then((json) => Signup(json))
-    .catch((err) => ErrorMessage(err))
+    .then((json) => handleLoginSuccess(json))
+    // .catch((err) => ErrorMessage(err))
     setName('')
     setEmail('')
     setPassword('')
@@ -45,32 +53,45 @@ export const Signup = () => {
     <>
       <Form onSubmit={(e) => handleSignUp(e)}>
         <Title>Sign up</Title>
+        <label>
+          Name
+        </label>
         <Input
         type = "text"
         required
         minLength={2}
         maxLength={20}
         value = { name }
-        placeholder = "name"
+        placeholder = "Name"
         onChange = {event => setName(event.target.value)}
         />
+
+        <label>
+          Email
+        </label>
         <Input 
         type="email"
         required
         minLength={3}
         value = { email }
-        placeholder = "email"
+        placeholder = "Email"
         onChange = {event => setEmail(event.target.value)}
         />
+
+        <label>
+          Password
+        </label>
         <Input 
         type="password"
         required
         minLength={8}
         value = { password }
-        placeholder = "password"
+        placeholder = "Password"
         onChange = {event => setPassword(event.target.value)}
         />
-        <Btn type="submit" title="log in" />
+
+        <Btn type="submit" title="Register" />
+      {statusMessage && <Text small> {`${statusMessage}`} </Text>}
       </Form>
     </>
   )

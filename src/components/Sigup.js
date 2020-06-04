@@ -19,17 +19,20 @@ export const Signup = () => {
   const handleLoginSuccess = (loginResponse) => {
     const statusMessage = JSON.stringify(loginResponse.message)
     dispatch(user.actions.setStatusMessage({ statusMessage }))
-    dispatch(
-      user.actions.setAccessToken({ accessToken: loginResponse.accessToken })
-      );
-    dispatch(
-      user.actions.setUserId({ userId: loginResponse.userId }))
+    dispatch(user.actions.setAccessToken({ accessToken: loginResponse.accessToken }))
+    dispatch(user.actions.setUserId({ userId: loginResponse.userId }))
+    setName('')
+    setEmail('')
+    setPassword('')
   }
 
   const ErrorMessage = (error) => {
     const message = JSON.stringify(error.message)
     dispatch(user.actions.setStatusMessage({ message }))
     dispatch(user.actions.logout())
+    setName('')
+    setEmail('')
+    setPassword('')
   }
 
   const handleSignUp = (event) => {
@@ -42,7 +45,7 @@ export const Signup = () => {
     })
     .then((res) => res.json())
     .then((json) => handleLoginSuccess(json))
-    // .catch((err) => ErrorMessage(err))
+    .catch((err) => ErrorMessage(err))
     setName('')
     setEmail('')
     setPassword('')

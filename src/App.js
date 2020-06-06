@@ -38,7 +38,7 @@ export const App = () => {
             <Signup />
           </Route>
 
-          <Route path="/lockerroom/:id" exact>
+          <Route path="/lockerRoom/:id" exact>
             <Dashboard />
           </Route>
 

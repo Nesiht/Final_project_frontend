@@ -25,7 +25,7 @@ export const Login = () => {
     dispatch(user.actions.setUserId({ userId: loginResponse.userId }))
 
     if( loginResponse.accessToken ) {
-      history.push(`/lockerroom/${loginResponse.userId}`)
+      history.push(`/lockerRoom/${loginResponse.userId}`)
     } else {
       history.push(`/login`)
     }

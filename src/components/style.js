@@ -76,6 +76,16 @@ export const Text = styled.p`
   }
 `
 
+export const Svg = styled.svg`
+  width: 512px;
+  height: 340px;
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 150px;
+  }
+`
+
 
 // HEADER
 export const Navbar = styled.div`
@@ -111,6 +121,10 @@ export const StyledLink = styled(NavLink)`
     font-weight: 600;
     text-decoration: underline;
   }
+
+  @media (max-width: 768px) {
+    display: ${props => props.hidemobile ? 'none' : ''} ;
+  }
 `
 
 
@@ -145,7 +159,6 @@ export const Form = styled.form`
 
   @media (max-width: 768px) {
     max-width: 75vw;
-
   }
 `
 
@@ -158,6 +171,5 @@ export const Input = styled.input`
 
   &:focus {
   background-color: #AED6F1;
-  
 }
 `

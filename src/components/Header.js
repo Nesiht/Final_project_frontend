@@ -12,9 +12,9 @@ export const Header = () => {
           <StyledLink to="/home">
             Home
           </StyledLink>
-          <StyledLink to="/test">Features</StyledLink>
-          <StyledLink to="/test1">Articles</StyledLink>
-          <StyledLink to="/test2">Testimonials</StyledLink>
+          <StyledLink to="/test" hidemobile>Features</StyledLink>
+          <StyledLink to="/test1" hidemobile>Articles</StyledLink>
+          <StyledLink to="/test2" hidemobile>Testimonials</StyledLink>
         </NavMenu>
         <NavMenu marginLeft>
           <StyledLink to="/login">

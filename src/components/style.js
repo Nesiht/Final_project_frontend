@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 
 // CTA
-export const CtaBg = styled.div`
+export const BgContainer = styled.div`
   background: linear-gradient(to right bottom,#f7f5fb 50%,#fff 50%);
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -20,6 +20,14 @@ export const Container = styled.div`
   @media (max-width: 768px) {
     max-width: 720px;
     flex-direction: column;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 430px;
+  }
+
+  @media (max-width: 375px) {
+    max-width: 300px;
   }
 `
 
@@ -66,6 +74,7 @@ export const Title = styled.h1`
 
 export const Text = styled.p`
   font-size: ${props => props.small ? '0.9rem' : '1.5rem' };
+  text-align: ${props => props.align || 'left'};
   font-weight: 400;
   margin-bottom: 1.5rem;
   line-height: 1.5;
@@ -81,8 +90,8 @@ export const Svg = styled.svg`
   height: 340px;
 
   @media (max-width: 768px) {
-    width: 300px;
-    height: 150px;
+    width: 350px;
+    height: 250px;
   }
 `
 
@@ -125,6 +134,7 @@ export const StyledLink = styled(NavLink)`
   @media (max-width: 768px) {
     display: ${props => props.hidemobile ? 'none' : ''} ;
   }
+  
 `
 
 
@@ -143,6 +153,9 @@ export const Button = styled.button`
   &:hover {
     background-color: #AF7AC5;
     transition: 0.4s;
+  }
+
+  @media (max-width: 480px) {
   }
 `
 

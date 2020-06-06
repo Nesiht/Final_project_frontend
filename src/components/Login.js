@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom'
 import { user } from '../reducers/user'
 import { Btn } from 'components/Btn'
 
@@ -10,20 +11,24 @@ const logInURL = "http://localhost:8080/sessions";
 
 export const Login = () => {
   const dispatch = useDispatch()
+  const history = useHistory()
 
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
-
+  
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
 
-  const handleLoginSuccess = (loginResponse) => {
+  const handleLoginSuccess =  (loginResponse) => {
     const statusMessage = JSON.stringify(loginResponse.message)
     dispatch(user.actions.setStatusMessage({ statusMessage }))
-    dispatch(
-      user.actions.setAccessToken({ accessToken: loginResponse.accessToken })
-      );
-    dispatch(
-      user.actions.setUserId({ userId: loginResponse.userId }))
+    dispatch(user.actions.setAccessToken({ accessToken: loginResponse.accessToken }))
+    dispatch(user.actions.setUserId({ userId: loginResponse.userId }))
+
+    if( loginResponse.accessToken ) {
+      history.push(`/lockerroom/${loginResponse.userId}`)
+    } else {
+      history.push(`/login`)
+    }
   }
       
   const ErrorMessage = (error) => {

@@ -3,10 +3,11 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { user } from "./reducers/user"
+import { Header } from 'components/Header'
 import { LandingPage } from './components/LandingPage'
 import { Login } from 'components/Login'
-import { Header } from 'components/Header'
 import { Signup } from 'components/Sigup'
+import { Dashboard } from 'components/Dashboard'
 
 
 const reducer = combineReducers({
@@ -35,6 +36,10 @@ export const App = () => {
 
           <Route path="/signup" exact>
             <Signup />
+          </Route>
+
+          <Route path="/lockerroom/:id" exact>
+            <Dashboard />
           </Route>
 
           <Route path="/url/:variable" exact>

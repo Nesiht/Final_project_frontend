@@ -18,7 +18,7 @@ export const Container = styled.div`
   max-width: ${props => props.width || '1144px' };
 
   @media (max-width: 768px) {
-    max-width: ${props => props.width || '720px' };
+    max-width: 720px;
     flex-direction: column;
   }
 `
@@ -65,7 +65,6 @@ export const Title = styled.h1`
 `
 
 export const Text = styled.p`
-  text-align: ${props => props.align || 'left'};
   font-size: ${props => props.small ? '0.9rem' : '1.5rem' };
   font-weight: 400;
   margin-bottom: 1.5rem;

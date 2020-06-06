@@ -16,7 +16,7 @@ export const Dashboard = () => {
       {ifToken && 
         <>
           <Text align='center'>You have a legit accessToken!</Text>
-          <Btn title="Write new entry" />
+          <Btn title="Write new entry"/>
         </>
       }
     </Container>

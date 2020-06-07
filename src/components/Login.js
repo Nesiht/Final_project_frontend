@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { user } from '../reducers/user'
 import { Btn } from 'components/Btn'
@@ -7,7 +7,7 @@ import { Btn } from 'components/Btn'
 // Styles
 import { Form, Input, Title, Text } from 'components/style'
 
-const logInURL = "http://localhost:8080/sessions";
+const logInURL = "http://localhost:8080/sessions"
 
 export const Login = () => {
   const dispatch = useDispatch()

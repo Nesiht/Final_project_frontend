@@ -19,7 +19,12 @@
 2. Create CTA component X
 3. Create Button component X
 4. Create Features description component X
-5. Create Login component
+5. Create Login component X
 6. Create Footer component
-7. Create basic styling
-8. Testing creating new user and login users
+7. Create basic styling X
+8. Testing creating new user and login users X
+9. New registered users get logged in automaticly
+10. Sign up form update, email confirmation
+11. Create dashboard
+12. Create new endpoints for entries
+13. Try and access the new entries endpoint from dashboard

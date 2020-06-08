@@ -45,10 +45,6 @@ export const AddEntrie = () => {
   };
 
   return (
-    <>
-    <Text>This is add entrie component</Text>
-    {/* <Text>userID: {userId}</Text>
-    <Text>accessToken: {accessToken}</Text> */}
     <Form onSubmit={(e) => handleLogin(e)}>
       <Title>Add new entry</Title>
       <label>
@@ -81,7 +77,5 @@ export const AddEntrie = () => {
         <Btn type="submit" title="Send" />
         {statusMessage && <Text small> {`${statusMessage}`} </Text>}
     </Form>
-
-    </>
   )
 }

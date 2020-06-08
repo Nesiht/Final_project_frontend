@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Btn } from 'components/Btn'
 
@@ -13,16 +13,18 @@ import { AddEntrie } from 'components/AddEntrie'
 
 export const Dashboard = () => {
   const ifToken = useSelector((store) => store.user.login.accessToken)
+  const [ newentry, setNewentry ] = useState(false)
+
+  const handleClick = () => {setNewentry(newentry => !newentry)}
   
   return (
     <>
       {ifToken && 
         <BgContainer>
-          <Container direction='column' width='500px'>
-            <Text align='center'>You have a legit accessToken!</Text>
-            <Btn title="Write new entry"/>
-            <AddEntrie />
+          <Container >
+            <Btn title="Write new entry" handleAction={handleClick} />
           </Container>
+          {newentry && <AddEntrie />}
         </BgContainer>
       }
     </>

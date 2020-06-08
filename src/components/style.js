@@ -11,6 +11,7 @@ export const BgContainer = styled.div`
 
 export const Container = styled.div`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   flex-direction: ${props => props.direction || 'row' };
   margin-left: auto;
@@ -18,12 +19,12 @@ export const Container = styled.div`
   max-width: ${props => props.width || '1144px' };
 
   @media (max-width: 768px) {
-    max-width: 720px;
+    max-width: 614px;
     flex-direction: column;
   }
 
   @media (max-width: 480px) {
-    max-width: 430px;
+    max-width: 384px;
   }
 
   @media (max-width: 375px) {
@@ -132,6 +133,9 @@ export const StyledLink = styled(NavLink)`
   }
 
   @media (max-width: 768px) {
+  }
+
+  @media (max-width: 480px) {
     display: ${props => props.hidemobile ? 'none' : ''} ;
   }
   
@@ -149,13 +153,19 @@ export const Button = styled.button`
   color: white;
   cursor: pointer;
   transition: 0.4s;
+  max-width: 25vw;
 
   &:hover {
     background-color: #AF7AC5;
     transition: 0.4s;
   }
 
+  @media (max-width: 768px) {
+    max-width: 100vw;
+  }
+
   @media (max-width: 480px) {
+    max-width: 100vw;
   }
 `
 
@@ -171,7 +181,11 @@ export const Form = styled.form`
   padding-top: 3rem;
 
   @media (max-width: 768px) {
-    max-width: 75vw;
+    max-width: 614px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 384px;
   }
 `
 
@@ -184,5 +198,5 @@ export const Input = styled.input`
 
   &:focus {
   background-color: #AED6F1;
-}
+  }
 `

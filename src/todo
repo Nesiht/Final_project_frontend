@@ -27,9 +27,10 @@
 10. Sign up form update, email validation
 11. Create dashboard X
 12. Create new endpoints for entries X
-13. Try and access the new entries endpoint from dashboard 
+13. Try and access the new entries endpoint from dashboard X
+  -- Need to store entries somewhere in order to iterate thru them
 14. Create add new entry form X
 15. Add more visual information to add entry form (how many chars they can type in each field)
 16. Change grade input to range slider
 17. Check why the statusMessage is not updated and displayed in the add new entry X
-18. Add entry from is not wide enough for mobile screen
+18. Add entry from is not wide enough for mobile screen X

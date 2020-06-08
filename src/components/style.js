@@ -11,16 +11,16 @@ export const BgContainer = styled.div`
 
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: ${props => props.justify || 'center'};
+  flex-wrap: ${props => props.wrap || 'wrap'};
   flex-direction: ${props => props.direction || 'row' };
   margin-left: auto;
   margin-right: auto;
   max-width: ${props => props.width || '1144px' };
-
+  background-color: ${props => props.color || 'none'};
+  
   @media (max-width: 768px) {
     max-width: 614px;
-    flex-direction: column;
   }
 
   @media (max-width: 480px) {
@@ -77,12 +77,16 @@ export const Text = styled.p`
   font-size: ${props => props.small ? '0.9rem' : '1.5rem' };
   text-align: ${props => props.align || 'left'};
   font-weight: 400;
-  margin-bottom: 1.5rem;
+  // Maybe remove this
+  // margin-bottom: 1.5rem;
   line-height: 1.5;
+  padding-right: ${props => props.paddingRight || '0'};
+  padding-left: ${props => props.paddingLeft || '0'};
 
   @media (max-width: 768px) {
-    padding-right: 15px;
-    padding-left: 15px;
+  }
+
+  @media (max-width: 480px) {
   }
 `
 

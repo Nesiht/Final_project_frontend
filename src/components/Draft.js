@@ -199,6 +199,8 @@ const InlineStyleControls = (props) => {
         />
       )}
     </div>
+
+
   );
 };
 

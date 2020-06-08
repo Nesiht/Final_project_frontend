@@ -49,7 +49,7 @@ export const Login = () => {
       .catch((err) => ErrorMessage(err))
       setEmail('')
       setPassword('')
-  };
+  }
     
   return (
     <Form onSubmit={(e) => handleLogin(e)}>

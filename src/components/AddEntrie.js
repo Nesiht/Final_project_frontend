@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { user } from '../reducers/user'
 import { Btn } from 'components/Btn'
+import Draft from 'components/Draft'
 
 // Styles
 import { Text, Form, Input, Title } from 'components/style'
@@ -56,7 +57,7 @@ export const AddEntrie = () => {
         placeholder ="Title"
         onChange = {event => setTitle(event.target.value)}
       />
-      <label>
+      {/* <label>
         Text
       </label>
       <Input 
@@ -64,7 +65,7 @@ export const AddEntrie = () => {
         value = { text }
         placeholder = "Text"
         onChange = {event => setText(event.target.value)}
-      />
+      /> */}
       <label>
         Grade
       </label>
@@ -74,8 +75,11 @@ export const AddEntrie = () => {
         placeholder = "Grade"
         onChange = {event => setGrade(event.target.value)}
       />
-        <Btn type="submit" title="Send" />
-        {statusMessage && <Text small> {`${statusMessage}`} </Text>}
+
+      <Draft />
+      
+      <Btn type="submit" title="Send" />
+      {statusMessage && <Text small> {`${statusMessage}`} </Text>}
     </Form>
   )
 }

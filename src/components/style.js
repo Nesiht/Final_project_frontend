@@ -76,7 +76,7 @@ export const Title = styled.h1`
 export const Text = styled.p`
   font-size: ${props => props.small ? '0.9rem' : '1.5rem' };
   text-align: ${props => props.align || 'left'};
-  font-weight: 400;
+  font-weight: ${props => props.bold ? '800' : '400'};
   // Maybe remove this
   // margin-bottom: 1.5rem;
   line-height: 1.5;

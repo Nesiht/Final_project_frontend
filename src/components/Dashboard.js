@@ -46,17 +46,17 @@ export const Dashboard = () => {
           <Container>
             <Text>Summery of entries</Text>
           </Container>
-          <Container color="green" width="800px" justify="space-between" wrap="nowrap">
+          <Container color="pink" width="800px" justify="space-between" wrap="nowrap">
               <Text small paddingRight='15px' paddingLeft='15px'>Date</Text>
               <Text small paddingRight='15px' paddingLeft='15px'>Title</Text>
               <Text small paddingRight='15px' paddingLeft='15px'>Grade</Text>
           </Container>
-          <Container color="yellow" width="800px" justify="space-between" wrap="nowrap">
+          <Container color="hotpink" width="800px" justify="space-between" wrap="nowrap">
               <Text small paddingRight='15px' paddingLeft='15px'>Date</Text>
               <Text small paddingRight='15px' paddingLeft='15px'>Title</Text>
               <Text small paddingRight='15px' paddingLeft='15px'>Grade</Text>
           </Container>
-          <Container color="blue" width="800px" justify="space-between" wrap="nowrap">
+          <Container color="pink" width="800px" justify="space-between" wrap="nowrap">
               <Text small paddingRight='15px' paddingLeft='15px'>Date</Text>
               <Text small paddingRight='15px' paddingLeft='15px'>Title</Text>
               <Text small paddingRight='15px' paddingLeft='15px'>Grade</Text>

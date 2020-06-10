@@ -57,7 +57,7 @@ export const AddEntrie = () => {
         placeholder ="Title"
         onChange = {event => setTitle(event.target.value)}
       />
-      {/* <label>
+      <label>
         Text
       </label>
       <Input 
@@ -65,7 +65,7 @@ export const AddEntrie = () => {
         value = { text }
         placeholder = "Text"
         onChange = {event => setText(event.target.value)}
-      /> */}
+      />
       <label>
         Grade
       </label>
@@ -76,7 +76,7 @@ export const AddEntrie = () => {
         onChange = {event => setGrade(event.target.value)}
       />
 
-      <Draft />
+      {/* <Draft /> */}
       
       <Btn type="submit" title="Send" />
       {statusMessage && <Text small> {`${statusMessage}`} </Text>}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { Btn } from 'components/Btn'
 import { user } from '../reducers/user'
 
@@ -13,6 +14,7 @@ export const Signup = () => {
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
   const dispatch = useDispatch()
+  const history = useHistory()
 
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
 
@@ -24,6 +26,11 @@ export const Signup = () => {
     setName('')
     setEmail('')
     setPassword('')
+    if( loginResponse.accessToken ) {
+      history.push(`/lockerRoom/${loginResponse.userId}`)
+    } else {
+      history.push(`/login`)
+    }
   }
 
   const ErrorMessage = (error) => {

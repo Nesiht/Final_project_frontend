@@ -14,6 +14,8 @@ export const Login = () => {
   const history = useHistory()
 
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
+  const accessToken = useSelector((store) => store.user.login.accessToken)
+  const userId = useSelector((store) => store.user.login.userId)
   
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
@@ -52,29 +54,35 @@ export const Login = () => {
   }
     
   return (
-    <Form onSubmit={(e) => handleLogin(e)}>
-      <Title>Login</Title>
-      <label>
-        Email
-      </label>
-      <Input 
-        type = "email"
-        value = { email }
-        placeholder ="Email"
-        onChange = {event => setEmail(event.target.value)}
-      />
-      <label>
-        Password
-      </label>
-      <Input 
-        type = "password"
-        value = { password }
-        placeholder = "Password"
-        onChange = {event => setPassword(event.target.value)}
-      />
-
+    <>
+      {!accessToken && 
+        <Form onSubmit={(e) => handleLogin(e)}>
+        <Title>Login</Title>
+        <label>
+          Email
+        </label>
+        <Input 
+          type = "email"
+          value = { email }
+          placeholder ="Email"
+          onChange = {event => setEmail(event.target.value)}
+        />
+        <label>
+          Password
+        </label>
+        <Input 
+          type = "password"
+          value = { password }
+          placeholder = "Password"
+          onChange = {event => setPassword(event.target.value)}
+        />
+  
         <Btn type="submit" title="Log in" />
         {statusMessage && <Text small> {`${statusMessage}`} </Text>}
-    </Form>
+        </Form>
+      }
+      
+      {accessToken && history.push(`/lockerRoom/${userId}`) }
+    </>
   )
 }

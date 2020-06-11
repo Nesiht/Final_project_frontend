@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Slider from 'react-rangeslider'
 import { user } from '../reducers/user'
 import { Btn } from 'components/Btn'
 import Draft from 'components/Draft'
 
 // Styles
 import { Text, Form, Input, Title } from 'components/style'
+import 'react-rangeslider/lib/index.css'
 
 const entrieUrl = "http://localhost:8080/entries"
 
@@ -17,7 +19,7 @@ export const AddEntrie = () => {
 
   const [ title, setTitle ] = useState('')
   const [ text, setText ] = useState('')
-  const [ grade, setGrade ] = useState()
+  const [ grade, setGrade ] = useState(5)
 
   const handleLoginSuccess =  (loginResponse) => {
     const statusMessage = JSON.stringify(loginResponse.message)
@@ -45,7 +47,18 @@ export const AddEntrie = () => {
       setGrade('')
   };
 
-  return (
+  const handleSliderChange = (value) => {
+    setGrade(value)
+  }
+
+  const horizontalLabels = {
+    0: 'Bad',
+    5: 'Okay',
+    10: 'Excellent'
+  }
+
+
+   return (
     <Form onSubmit={(e) => handleLogin(e)}>
       <Title>Add new entry</Title>
       <label>
@@ -69,11 +82,13 @@ export const AddEntrie = () => {
       <label>
         Grade
       </label>
-      <Input 
-        type = "number"
-        value = { grade }
-        placeholder = "Grade"
-        onChange = {event => setGrade(event.target.value)}
+      <Slider
+        value = {grade}
+        min = {0}
+        max = {10}
+        orientation = "horizontal"
+        onChange = {handleSliderChange}
+        labels = {horizontalLabels}
       />
 
       {/* <Draft /> */}

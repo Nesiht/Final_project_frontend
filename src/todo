@@ -18,12 +18,12 @@
 1. Create Landing page component X
 2. Create CTA component X
 3. Create Button component X
-4. Create Features description component X
+4. Create Features description component
 5. Create Login component X
 6. Create Footer component
 7. Create basic styling X
 8. Testing creating new user and login users X
-9. New registered users get logged in automaticly
+9. New registered users get logged in automaticly X
 10. Sign up form update, email validation
 11. Create dashboard X
 12. Create new endpoints for entries X

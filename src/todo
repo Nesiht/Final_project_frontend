@@ -37,3 +37,6 @@
 19. How to re-render summeryentrie when user adds new entry
 20. How to reset the statusMessage when going between routes (failed to login will show statusMessage, then going to signup will continue to show the same statusMessage)
 21. Create new redux store to save users entries. 
+22. Update header when user are logged in
+23. Create logout function to replace login/signup when user are logged in
+24. New users with no entries will generate error on the site X

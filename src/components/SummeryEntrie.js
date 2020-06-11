@@ -35,7 +35,8 @@ export const SummeryEntrie = () => {
       </Container>
       {/* CHECKING STORED DATA */}
       {/* {console.log(entriedata)} */}
-      {entriedata.sort((a, b) => (a > b) ? 1 : -1).slice(0,3).map((entry) => (
+      {entriedata.length > 0 &&  
+      entriedata.sort((a, b) => (a > b) ? 1 : -1).slice(0,3).map((entry) => (
         <Container key={entry._id} color="pink" width="800px" justify="space-between" wrap="nowrap">
           <Text small paddingRight='15px' paddingLeft='15px'>
             <Moment format="YYYY-MM-DD">
@@ -46,6 +47,11 @@ export const SummeryEntrie = () => {
           <Text small paddingRight='15px' paddingLeft='15px'>{entry.grade}</Text>
         </Container>
       ))}
+      {!entriedata.length > 0 && 
+        <Container>
+          <Text small>You have no entries to read!</Text>
+        </Container>
+      }
     </>
   )
 }

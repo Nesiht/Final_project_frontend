@@ -15,28 +15,34 @@
     - Calendar overview to find/read old entries (component)
 
 
+
+4. Create Features description component
+6. Create Footer component
+10. Sign up form update, email validation
+15. Add more visual information to add entry form (how many chars they can type in each field)
+19. How to re-render summery entrie when user adds new entry
+20. How to reset the statusMessage when going between routes (failed to login will show statusMessage, then going to signup will continue to show the same statusMessage)
+21. Create new redux store to save users entries. 
+22. Update header when user are logged in
+23. Create logout function to replace login/signup when user are logged in
+25. Summery Entrie re-renders when "write new entry" button is pressed so the list is not i descending order anymore
+
+
+
+[DONE]
 1. Create Landing page component X
 2. Create CTA component X
 3. Create Button component X
-4. Create Features description component
 5. Create Login component X
-6. Create Footer component
 7. Create basic styling X
 8. Testing creating new user and login users X
 9. New registered users get logged in automaticly X
-10. Sign up form update, email validation
 11. Create dashboard X
 12. Create new endpoints for entries X
 13. Try and access the new entries endpoint from dashboard X 
   -- Need to store entries somewhere in order to iterate thru them X
 14. Create add new entry form X
-15. Add more visual information to add entry form (how many chars they can type in each field)
-16. Change grade input to range slider
+16. Change grade input to range slider X
 17. Check why the statusMessage is not updated and displayed in the add new entry X
 18. Add entry from is not wide enough for mobile screen X
-19. How to re-render summeryentrie when user adds new entry
-20. How to reset the statusMessage when going between routes (failed to login will show statusMessage, then going to signup will continue to show the same statusMessage)
-21. Create new redux store to save users entries. 
-22. Update header when user are logged in
-23. Create logout function to replace login/signup when user are logged in
 24. New users with no entries will generate error on the site X

@@ -1,10 +1,15 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 // Styles
 import { Navbar, NavMenu, StyledLink } from 'components/style'
 
 
 export const Header = () => {
+  const accessToken = useSelector((store) => store.user.login.accessToken)
+  const userId = useSelector((store) => store.user.login.userId)
+
+
   return (
     <>
       <Navbar>
@@ -17,12 +22,26 @@ export const Header = () => {
           <StyledLink to="/test2" hidemobile>Testimonials</StyledLink>
         </NavMenu>
         <NavMenu marginLeft>
-          <StyledLink to="/login">
-            Login
-          </StyledLink>
-          <StyledLink to="/signup">
-            Sign up
-          </StyledLink>
+          {!accessToken && 
+          <>
+            <StyledLink to="/login">
+              Login
+            </StyledLink>
+            <StyledLink to="/signup">
+              Sign up
+            </StyledLink>
+            </>
+          }
+          {accessToken && 
+            <>
+              <StyledLink to={`/lockerRoom/${userId}`}>
+                Dashboard
+              </StyledLink>
+              <StyledLink to="/logout">
+                Logout
+              </StyledLink>
+            </>
+          }
         </NavMenu>
       </Navbar>
     </>

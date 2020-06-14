@@ -13,10 +13,10 @@ import { AddEntrie } from 'components/AddEntrie'
 // Create a useEffect to access users information, name, entries etc
 
 export const Dashboard = () => {
-  const [newentry, setNewentry] = useState(false)
+  const [displayEntryForm, setDisplayEntryForm] = useState(false)
   const accessToken = useSelector((store) => store.user.login.accessToken)
   
-  const handleClick = () => {setNewentry(newentry => !newentry)}
+  const handleClick = () => {setDisplayEntryForm(newentry => !newentry)}
 
   
   return (
@@ -26,7 +26,7 @@ export const Dashboard = () => {
           <Container >
             <Btn title="Write new entry" handleAction={handleClick} />
           </Container>
-          {newentry && <AddEntrie />}
+          {displayEntryForm && <AddEntrie />}
           <SummeryEntrie />
         </BgContainer>
       }

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import Moment from 'react-moment'
 
 // Styles
 import { Container, Text } from 'components/style'
+import 'react-accessible-accordion/dist/fancy-example.css'
 
 export const SummeryEntrie = () => {
   const [entriedata, setEntriedata] = useState([])
@@ -24,34 +26,59 @@ export const SummeryEntrie = () => {
 
   return (
     <>
-      <Container>
-        <Text>Summery of entries</Text>
-      </Container>
-
-      <Container color="pink" width="800px" justify="space-between" wrap="nowrap">
-          <Text small bold paddingRight='15px' paddingLeft='15px'>Date</Text>
-          <Text small bold paddingRight='15px' paddingLeft='15px'>Title</Text>
-          <Text small bold paddingRight='15px' paddingLeft='15px'>Grade</Text>
-      </Container>
-      {/* CHECKING STORED DATA */}
-      {/* {console.log(entriedata)} */}
-      {entriedata.length > 0 &&  
-      entriedata.sort((a, b) => (a > b) ? 1 : -1).slice(0,3).map((entry) => (
-        <Container key={entry._id} color="pink" width="800px" justify="space-between" wrap="nowrap">
-          <Text small paddingRight='15px' paddingLeft='15px'>
-            <Moment format="YYYY-MM-DD">
-              {entry.createdAt}
-            </Moment>
-          </Text>
-          <Text small paddingRight='15px' paddingLeft='15px'>{entry.title}</Text>
-          <Text small paddingRight='15px' paddingLeft='15px'>{entry.grade}</Text>
-        </Container>
-      ))}
-      {!entriedata.length > 0 && 
-        <Container>
-          <Text small>You have no entries to read!</Text>
-        </Container>
-      }
+    {entriedata.length > 0 &&
+      entriedata.sort((a, b) => (a > b) ? 1 : -1).map((entry) => (
+    <Container key={entry._id}>
+      <Accordion allowZeroExpanded='true'>
+        <AccordionItem>
+          <AccordionItemHeading>
+            <AccordionItemButton>
+              <Moment format="YYYY-MM-DD">
+                {entry.createdAt}
+              </Moment>
+              {entry.title}
+            </AccordionItemButton>
+          </AccordionItemHeading>
+          <AccordionItemPanel>
+          {entry.text}
+          {entry.grade}
+          </AccordionItemPanel>
+        </AccordionItem>
+      </Accordion>
+    </Container>
+    ))}
     </>
   )
 }
+
+
+
+
+{/* <>
+<Container>
+  <Text>Summery of entries</Text>
+</Container>
+
+<Container color="pink" width="800px" justify="space-between" wrap="nowrap">
+    <Text small bold paddingRight='15px' paddingLeft='15px'>Date</Text>
+    <Text small bold paddingRight='15px' paddingLeft='15px'>Title</Text>
+    <Text small bold paddingRight='15px' paddingLeft='15px'>Grade</Text>
+</Container>
+{entriedata.length > 0 &&  
+entriedata.sort((a, b) => (a > b) ? 1 : -1).map((entry) => (
+  <Container key={entry._id} color="pink" width="800px" justify="space-between" wrap="nowrap">
+    <Text small paddingRight='15px' paddingLeft='15px'>
+      <Moment format="YYYY-MM-DD">
+        {entry.createdAt}
+      </Moment>
+    </Text>
+    <Text small paddingRight='15px' paddingLeft='15px'>{entry.title}</Text>
+    <Text small paddingRight='15px' paddingLeft='15px'>{entry.grade}</Text>
+  </Container>
+))}
+{!entriedata.length > 0 && 
+  <Container>
+    <Text small>You have no entries to read!</Text>
+  </Container>
+}
+</> */}

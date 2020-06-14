@@ -6,6 +6,7 @@ import { user } from "./reducers/user"
 import { Header } from 'components/Header'
 import { LandingPage } from './components/LandingPage'
 import { Login } from 'components/Login'
+import { Logout } from 'components/Logout'
 import { Signup } from 'components/Sigup'
 import { Dashboard } from 'components/Dashboard'
 
@@ -41,6 +42,10 @@ export const App = () => {
 
           <Route path="/draft" exact>
             <Draft />
+          </Route>
+
+          <Route path="/logout" exact>
+            <Logout />
           </Route>
 
           <Route path="/lockerRoom/:id" exact>

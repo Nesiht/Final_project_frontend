@@ -9,11 +9,14 @@ export const entrie = createSlice({
   initialState: initialState,
   reducers: {
     // Add all entries on load
-    setEntrie: (state, action) => {
+    setAllEntries: (state, action) => {
       // const { _id, CreatedAt, title, text, grade } = action.payload
       console.log(`Saving user entries to redux`)
       // state.entries = { _id, CreatedAt, title, text, grade }
       state.entries = action.payload
+    },
+    setNewEntry: (state, action) => {
+      console.log(`Adding new entry to redux`)
     }
 
     // Push new entrie

@@ -14,8 +14,8 @@ export const Container = styled.div`
   justify-content: ${props => props.justify || 'center'};
   flex-wrap: ${props => props.wrap || 'wrap'};
   flex-direction: ${props => props.direction || 'row' };
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: ${props => props.marginLeft || 'auto'};
+  margin-right: ${props => props.marginRight || 'auto'};
   max-width: ${props => props.width || '1144px' };
   background-color: ${props => props.color || 'none'};
   
@@ -24,7 +24,6 @@ export const Container = styled.div`
   }
 
   @media (max-width: 480px) {
-    max-width: 384px;
   }
 
   @media (max-width: 375px) {

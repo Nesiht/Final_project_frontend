@@ -10,9 +10,6 @@ import { Container, BgContainer } from 'components/style'
 // Test
 import { AddEntrie } from 'components/AddEntrie'
 
-// Need to add information if !token so that you can see as a user that you need to login in order to get access
-// Create a useEffect to access users information, name, entries etc
-
 export const Dashboard = () => {
   const [displayEntryForm, setDisplayEntryForm] = useState(false)
   const dispatch = useDispatch()
@@ -30,9 +27,9 @@ export const Dashboard = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        dispatch(entrie.actions.setEntrie(data))
+        dispatch(entrie.actions.setAllEntries(data))
       })
-   }, [])
+   }, [userid])
   
   return (
     <>

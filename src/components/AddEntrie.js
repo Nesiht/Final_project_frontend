@@ -8,6 +8,7 @@ import { Btn } from 'components/Btn'
 // Styles
 import { Text, Form, Input, Title } from 'components/style'
 import 'react-rangeslider/lib/index.css'
+import { entrie } from 'reducers/entrie'
 
 const entrieUrl = "http://localhost:8080/entries"
 
@@ -40,7 +41,7 @@ export const AddEntrie = () => {
       headers: { 'Content-Type': 'application/json', Authorization: accessToken },
     })
       .then((res) => res.json())
-      .then((json) => handleLoginSuccess(json))
+      .then((json) => handleLoginSuccess(json)) 
       .catch((err) => ErrorMessage(err))
       setTitle('')
       setText('')

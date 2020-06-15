@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { Btn } from 'components/Btn'
 
 // Styles
@@ -6,17 +7,20 @@ import { BgContainer, Container, CtaFocus, CtaSide, Title, Text, Svg } from 'com
 
 
 export const Cta = () => {
+  const handleClick = () => history.push(`/login`)
+  const history = useHistory()
+
   return (
     <BgContainer>
       <Container>
         <CtaFocus>
           <Title>
-            Train hard, store your thoughts with xxxxx
+            Train hard, store your thoughts with Hench
           </Title>
           <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            This compact and colorful application offers an uncomplicated way to keep log of your efforts in the gym, we created this basic journal that helps you get specific with your workout goals!
           </Text>
-          <Btn title="Get started" />
+          <Btn title="Get started" handleAction={handleClick} />
           <Text small>Already have an account? Login here</Text>
         </CtaFocus>
         <CtaSide>
@@ -28,3 +32,8 @@ export const Cta = () => {
   )
 }
 
+
+
+
+// This compact and colorful application offers an uncomplicated way to keep log of your efforts in the gym, we created this basic journal that helps you get specific with your workout goals!
+// We found a great basic journal that helps you get specific with your workout goals, whether you plan on working with a personal trainer or not.

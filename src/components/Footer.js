@@ -1,12 +1,12 @@
 import React from 'react'
 
 // Styles
-import { BgContainer, Container, CtaFocus, CtaSide, Title, Text, Svg } from 'components/style'
+import { Container, Text } from 'components/style'
 
 export const Footer = () => {
   return (
     <>
-    <Container direction='column' color='#f7f7f7' wrap='no-wrap' width='100vw'>
+    <Container direction='column' color='#f7f7f7' width='100vw'>
       <Container justify='flex-start' marginLeft='none' marginRight='none'>
         <Text small paddingLeft='20px'>Github</Text>
         <Text small paddingLeft='20px'>Stack Overflow</Text>

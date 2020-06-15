@@ -33,22 +33,25 @@ export const Container = styled.div`
   }
 `
 
-export const CtaFocus = styled.div`
+export const Focus = styled.div`
   text-align: left;
   padding-right: 3rem;
   max-width: 66%;
-
+  
   @media (max-width: 768px) {
-    max-width: 100%;
+    max-width: 100vw;
     order: 2;
     text-align: center;
     padding-right: 15px;
     padding-left: 15px;
     padding-top: 15px;
   }
+
+  @media (max-width: 480px) {
+  }
 `
 
-export const CtaSide = styled.div`
+export const Side = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,9 +60,13 @@ export const CtaSide = styled.div`
   max-width: 33%;
 
   @media (max-width: 768px) {
-    max-width: 100%;
+    max-width: 100vw;
     order: 1;
     padding-right: 0;
+  }
+
+  @media (max-width: 480px) {
+
   }
 `
 
@@ -70,7 +77,12 @@ export const Title = styled.h1`
   margin-top: 0;
 
   @media (max-width: 768px) {
-    font-size: calc(1.5rem + 3.3vw);
+    // font-size: calc(1.5rem + 3.3vw);
+    font-size: ${props => props.small ? 'calc(1rem + 2vw)' : 'calc(1.5rem + 3.3vw)' };
+  }
+
+  @media (max-width: 480px) {
+    font-size: ${props => props.small ? 'calc(1rem + 2vw)' : 'calc(1.5rem + 3.3vw)' };
   }
 `
 

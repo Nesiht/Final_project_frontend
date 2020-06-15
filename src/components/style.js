@@ -20,7 +20,9 @@ export const Container = styled.div`
   background-color: ${props => props.color || 'none'};
   
   @media (max-width: 768px) {
-    max-width: 614px;
+    justify-content: space-around;
+    margin-left: none;
+    margin-right: none;
   }
 
   @media (max-width: 480px) {
@@ -83,9 +85,14 @@ export const Text = styled.p`
   padding-left: ${props => props.paddingLeft || '0'};
 
   @media (max-width: 768px) {
+    text-align: ${props => props.align || 'center'};
+    padding-right: 10px;
+    padding-left: 10px;
   }
 
   @media (max-width: 480px) {
+    padding-right: 10px;
+    padding-left: 10px;
   }
 `
 

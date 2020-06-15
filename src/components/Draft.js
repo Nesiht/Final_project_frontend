@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Editor, EditorState, getDefaultKeyBinding, RichUtils } from 'draft-js';
 import './draft.css'
 import '../../node_modules/draft-js/dist/Draft.css'

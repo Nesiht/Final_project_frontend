@@ -11,9 +11,11 @@ import { Signup } from 'components/Sigup'
 import { Dashboard } from 'components/Dashboard'
 
 import Draft from 'components/Draft'
+import { entrie } from 'reducers/entrie'
 
 const reducer = combineReducers({
-	user: user.reducer
+  user: user.reducer,
+  entrie: entrie.reducer
 });
 
 const store = configureStore({ reducer });

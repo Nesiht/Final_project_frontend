@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Slider from 'react-rangeslider'
 import { user } from '../reducers/user'
 import { Btn } from 'components/Btn'
-import Draft from 'components/Draft'
+// import Draft from 'components/Draft'
 
 // Styles
 import { Text, Form, Input, Title } from 'components/style'

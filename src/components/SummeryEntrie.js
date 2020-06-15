@@ -1,33 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import Moment from 'react-moment'
 
 // Styles
-import { Container, Text } from 'components/style'
+import { Container } from 'components/style'
 import 'react-accessible-accordion/dist/fancy-example.css'
 
 export const SummeryEntrie = () => {
-  const [entriedata, setEntriedata] = useState([])
-
-  const accessToken = useSelector((store) => store.user.login.accessToken)
-  const userid = useSelector((store) => store.user.login.userId)
-
-  const entrieUrl = `http://localhost:8080/entries/${userid}`
-
-  useEffect(() => {
-    fetch(entrieUrl, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json', Authorization: accessToken },
-    })
-      .then((res) => res.json())
-      .then((data) => setEntriedata(data))
-   }, [])
+  const allUserEntries = useSelector((store) => store.entrie.entries)
 
   return (
     <>
-    {entriedata.length > 0 &&
-      entriedata.sort((a, b) => (a > b) ? 1 : -1).map((entry) => (
+    {allUserEntries.length > 0 &&
+      allUserEntries.map((entry) => (
     <Container key={entry._id}>
       <Accordion allowZeroExpanded='true'>
         <AccordionItem>
@@ -50,35 +36,3 @@ export const SummeryEntrie = () => {
     </>
   )
 }
-
-
-
-
-{/* <>
-<Container>
-  <Text>Summery of entries</Text>
-</Container>
-
-<Container color="pink" width="800px" justify="space-between" wrap="nowrap">
-    <Text small bold paddingRight='15px' paddingLeft='15px'>Date</Text>
-    <Text small bold paddingRight='15px' paddingLeft='15px'>Title</Text>
-    <Text small bold paddingRight='15px' paddingLeft='15px'>Grade</Text>
-</Container>
-{entriedata.length > 0 &&  
-entriedata.sort((a, b) => (a > b) ? 1 : -1).map((entry) => (
-  <Container key={entry._id} color="pink" width="800px" justify="space-between" wrap="nowrap">
-    <Text small paddingRight='15px' paddingLeft='15px'>
-      <Moment format="YYYY-MM-DD">
-        {entry.createdAt}
-      </Moment>
-    </Text>
-    <Text small paddingRight='15px' paddingLeft='15px'>{entry.title}</Text>
-    <Text small paddingRight='15px' paddingLeft='15px'>{entry.grade}</Text>
-  </Container>
-))}
-{!entriedata.length > 0 && 
-  <Container>
-    <Text small>You have no entries to read!</Text>
-  </Container>
-}
-</> */}

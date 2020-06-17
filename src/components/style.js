@@ -16,6 +16,7 @@ export const Container = styled.div`
   flex-direction: ${props => props.direction || 'row' };
   margin-left: ${props => props.marginLeft || 'auto'};
   margin-right: ${props => props.marginRight || 'auto'};
+  padding-bottom: ${props => props.paddingBottom || ''};
   max-width: ${props => props.width || '1144px' };
   background-color: ${props => props.color || 'none'};
   

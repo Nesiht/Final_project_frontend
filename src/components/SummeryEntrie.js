@@ -2,8 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import Moment from 'react-moment'
-
-// Styles
 import { Container } from 'components/style'
 import 'react-accessible-accordion/dist/fancy-example.css'
 

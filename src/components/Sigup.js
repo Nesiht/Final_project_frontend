@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { Btn } from 'components/Btn'
 import { user } from '../reducers/user'
-
-// Styles
 import { Form, Title, Input, Text } from 'components/style'
 
 const signUpUrl = "http://localhost:8080/users"

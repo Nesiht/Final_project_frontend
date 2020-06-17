@@ -1,6 +1,4 @@
 import React from 'react'
-
-// Styles
 import { Container, Text } from 'components/style'
 
 export const Footer = () => {

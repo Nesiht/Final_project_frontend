@@ -4,8 +4,6 @@ import Slider from 'react-rangeslider'
 import { user } from '../reducers/user'
 import { Btn } from 'components/Btn'
 // import Draft from 'components/Draft'
-
-// Styles
 import { Text, Form, Input, Title } from 'components/style'
 import 'react-rangeslider/lib/index.css'
 import { entrie } from 'reducers/entrie'

@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { entrie } from '../reducers/entrie'
 import { Btn } from 'components/Btn'
 import { SummeryEntrie } from 'components/SummeryEntrie'
-
-// Styles
 import { Container, BgContainer } from 'components/style'
 
 // Test

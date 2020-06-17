@@ -1,10 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { Btn } from 'components/Btn'
-
-// Styles
 import { BgContainer, Container, Focus, Side, Title, Text, Svg, StyledLink } from 'components/style'
-
 
 export const Cta = () => {
   const handleClick = () => history.push(`/signup`)

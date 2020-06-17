@@ -8,6 +8,8 @@ import { Text, Form, Input, Title } from 'components/style'
 import 'react-rangeslider/lib/index.css'
 import { entrie } from 'reducers/entrie'
 
+import {Editortest} from 'components/Editortest'
+
 const entrieUrl = "http://localhost:8080/entries"
 
 export const AddEntrie = () => {
@@ -72,7 +74,10 @@ export const AddEntrie = () => {
       {/* <label>
         Text
       </label> */}
-      <Draft />
+
+      {/* <Draft /> */}
+      <Editortest />
+
       {/* <Input 
         type = "text"
         value = { text }

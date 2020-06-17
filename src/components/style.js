@@ -147,7 +147,8 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
   cursor: pointer;
   padding-right: .5rem;
-  padding-left: .5rem;
+  // padding-left: .5rem;
+  padding-left: ${props => props.paddingLeft || '.5rem'};
 
   &.active {
     color: #ffffff;

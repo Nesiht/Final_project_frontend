@@ -38,8 +38,7 @@ Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
 World
 
 
-4. Create Features description component
-  - Create on Feartures text
+
 6. Create Footer component
 10. Sign up form update, email validation
 15. Add more visual information to add entry form (how many chars they can type in each field)
@@ -48,7 +47,6 @@ World
   - Update Addentry component to also store the new entry in the redux store
   - How to re-render summery entrie when user adds new entry
 25. Summery Entrie re-renders when "write new entry" button is pressed so the list is not i descending order anymore
-
 
 
 [DONE]
@@ -74,3 +72,16 @@ World
 26. Decide on name for app X
 27. Update 'Login here' text on CTA component to link to login X
 28. Update CTA placeholder text X
+4. Create Features description component X
+  - Create on Feartures text
+
+
+
+  Github
+  https://github.com/Nesiht
+
+  Linkedin
+  https://www.linkedin.com/in/mathias-thorstr%C3%B6m-462935172/
+
+  Portfolio
+  https://admiring-keller-af310d.netlify.app/

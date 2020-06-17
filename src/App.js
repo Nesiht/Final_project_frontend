@@ -54,6 +54,21 @@ export const App = () => {
             <Dashboard />
           </Route>
 
+          <Route path='/github' component={() => {
+            window.location.href = 'https://github.com/Nesiht'; 
+            return null;
+          }}/>
+
+          <Route path='/linkedin' component={() => {
+            window.location.href = 'https://www.linkedin.com/in/mathias-thorstr%C3%B6m-462935172/'; 
+            return null;
+          }}/>
+
+          <Route path='/portfolio' component={() => {
+            window.location.href = 'https://admiring-keller-af310d.netlify.app/'; 
+            return null;
+          }}/>
+
           <Route path="/url/:variable" exact>
             {/* UNIQUE COMPONENT HERE FOR EXAMPLE */}
           </Route>

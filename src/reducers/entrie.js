@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = { 
-  entries: []
+  entries: [],
+  currentEntry: []
 }
 
 export const entrie = createSlice({
@@ -17,6 +18,10 @@ export const entrie = createSlice({
     },
     setNewEntry: (state, action) => {
       console.log(`Adding new entry to redux`)
+    },
+    setCurrentEntry: (state, action) => {
+      console.log(`Saving current entry to redux`)
+      state.currentEntry = action.payload
     }
 
     // Push new entrie

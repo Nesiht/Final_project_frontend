@@ -4,6 +4,8 @@
   font-family: 'Georgia', serif;
   font-size: 14px;
   padding: 15px;
+  margin: 20px 0px;
+  min-height: 500px;
 }
 
 .RichEditor-editor {
@@ -60,4 +62,11 @@
 
 .RichEditor-activeButton {
   color: #5890ff;
+}
+
+
+@media screen and (max-width: 480px) {
+  .RichEditor-root {
+    min-height: 300px;
+  }
 }

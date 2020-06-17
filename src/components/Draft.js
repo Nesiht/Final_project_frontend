@@ -1,8 +1,9 @@
 import React from 'react';
-import { Editor, EditorState, getDefaultKeyBinding, RichUtils } from 'draft-js';
+import { Editor, EditorState, getDefaultKeyBinding, RichUtils, convertToRaw  } from 'draft-js';
 import './draft.css'
 import '../../node_modules/draft-js/dist/Draft.css'
- 
+
+
 class Draft extends React.Component {
   constructor(props) {
     super(props);
@@ -58,14 +59,18 @@ class Draft extends React.Component {
       )
     );
   }
+  
 
   render() {
     const {editorState} = this.state;
+    
 
     // If the user changes block type before entering any text, we can
     // either style the placeholder or hide it. Let's just hide it now.
     let className = 'RichEditor-editor';
-    var contentState = editorState.getCurrentContent();
+    let contentState = editorState.getCurrentContent();
+    console.log('content state', convertToRaw(contentState))
+
     if (!contentState.hasText()) {
       if (contentState.getBlockMap().first().getType() !== 'unstyled') {
         className += ' RichEditor-hidePlaceholder';
@@ -90,7 +95,7 @@ class Draft extends React.Component {
             handleKeyCommand={this.handleKeyCommand}
             keyBindingFn={this.mapKeyToEditorCommand}
             onChange={this.onChange}
-            placeholder="Tell a story..."
+            placeholder="Tell me about your workout..."
             ref="editor"
             spellCheck={true}
           />
@@ -144,13 +149,8 @@ const BLOCK_TYPES = [
   {label: 'H1', style: 'header-one'},
   {label: 'H2', style: 'header-two'},
   {label: 'H3', style: 'header-three'},
-  {label: 'H4', style: 'header-four'},
-  {label: 'H5', style: 'header-five'},
-  {label: 'H6', style: 'header-six'},
-  {label: 'Blockquote', style: 'blockquote'},
   {label: 'UL', style: 'unordered-list-item'},
   {label: 'OL', style: 'ordered-list-item'},
-  {label: 'Code Block', style: 'code-block'},
 ];
 
 const BlockStyleControls = (props) => {
@@ -180,7 +180,6 @@ var INLINE_STYLES = [
   {label: 'Bold', style: 'BOLD'},
   {label: 'Italic', style: 'ITALIC'},
   {label: 'Underline', style: 'UNDERLINE'},
-  {label: 'Monospace', style: 'CODE'},
 ];
 
 const InlineStyleControls = (props) => {

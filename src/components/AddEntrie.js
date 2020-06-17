@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Slider from 'react-rangeslider'
 import { user } from '../reducers/user'
 import { Btn } from 'components/Btn'
-// import Draft from 'components/Draft'
+import Draft from 'components/Draft'
 import { Text, Form, Input, Title } from 'components/style'
 import 'react-rangeslider/lib/index.css'
 import { entrie } from 'reducers/entrie'
@@ -20,7 +20,7 @@ export const AddEntrie = () => {
   const [ text, setText ] = useState('')
   const [ grade, setGrade ] = useState(5)
 
-  const handleLoginSuccess =  (loginResponse) => {
+  const handleSaveSuccess =  (loginResponse) => {
     const statusMessage = JSON.stringify(loginResponse.message)
     dispatch(user.actions.setStatusMessage({ statusMessage }))
   }
@@ -30,7 +30,7 @@ export const AddEntrie = () => {
     dispatch(user.actions.setStatusMessage({ message }))
   }
 
-  const handleLogin = (event) => {
+  const handleSave = (event) => {
     event.preventDefault();
 
     fetch(entrieUrl, {
@@ -39,11 +39,11 @@ export const AddEntrie = () => {
       headers: { 'Content-Type': 'application/json', Authorization: accessToken },
     })
       .then((res) => res.json())
-      .then((json) => handleLoginSuccess(json)) 
+      .then((json) => handleSaveSuccess(json)) 
       .catch((err) => ErrorMessage(err))
       setTitle('')
       setText('')
-      setGrade('')
+      setGrade('5')
   };
 
   const handleSliderChange = (value) => {
@@ -58,9 +58,9 @@ export const AddEntrie = () => {
 
 
    return (
-    <Form onSubmit={(e) => handleLogin(e)}>
-      <Title>Add new entry</Title>
-      <label>
+    <Form onSubmit={(e) => handleSave(e)}>
+      <Title>Write new entry</Title>
+      {/* <label>
         Titel
       </label>
       <Input 
@@ -68,16 +68,17 @@ export const AddEntrie = () => {
         value = { title }
         placeholder ="Title"
         onChange = {event => setTitle(event.target.value)}
-      />
-      <label>
+      /> */}
+      {/* <label>
         Text
-      </label>
-      <Input 
+      </label> */}
+      <Draft />
+      {/* <Input 
         type = "text"
         value = { text }
         placeholder = "Text"
         onChange = {event => setText(event.target.value)}
-      />
+      /> */}
       <label>
         Grade
       </label>

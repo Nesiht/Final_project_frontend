@@ -38,8 +38,6 @@ Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
 World
 
 
-
-6. Create Footer component
 10. Sign up form update, email validation
 15. Add more visual information to add entry form (how many chars they can type in each field)
 20. How to reset the statusMessage when going between routes (failed to login will show statusMessage, then going to signup will continue to show the same statusMessage)
@@ -74,6 +72,8 @@ World
 28. Update CTA placeholder text X
 4. Create Features description component X
   - Create on Feartures text
+6. Create Footer component X
+
 
 
 

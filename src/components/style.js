@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom'
 
-
+// #27AE60 (Darker)
+// #2ECC71 (Lighter)
 // CTA
 export const BgContainer = styled.div`
   background: linear-gradient(to right bottom,#f7f5fb 50%,#fff 50%);
@@ -129,12 +130,12 @@ export const Navbar = styled.div`
   min-height: 4rem;
   position: sticky;
   top: 0;
-  background-color: pink ;
+  background-color: #2ECC71  ;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
   padding: .5rem 1rem;
 
   @media (max-width: 768px) {
-    background-color: pink;
+    background-color: #2ECC71 ;
   }
 `
 
@@ -168,7 +169,7 @@ export const StyledLink = styled(NavLink)`
 
 // BTN
 export const Button = styled.button`
-  background-color: pink;
+  background-color: #2ECC71 ;
   border: 1px solid transparent;
   padding: .8rem 2rem;
   font-weight: 600;
@@ -180,7 +181,7 @@ export const Button = styled.button`
   max-width: 25vw;
 
   &:hover {
-    background-color: #AF7AC5;
+    background-color: #27AE60;
     transition: 0.4s;
   }
 

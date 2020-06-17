@@ -15,21 +15,39 @@
     - Calendar overview to find/read old entries (component)
 
 
+SVG CREDITS
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+Weightlifting SVG
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+workout SVG
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/iconixar" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+kettlebell SVG
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/mynamepong" title="mynamepong">mynamepong</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+car SVG
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+fast-access
+
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+Team
+
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+World
+
 
 4. Create Features description component
   - Create on Feartures text
 6. Create Footer component
 10. Sign up form update, email validation
 15. Add more visual information to add entry form (how many chars they can type in each field)
-19. Update Get Started button on CTA to link to sign up.
 20. How to reset the statusMessage when going between routes (failed to login will show statusMessage, then going to signup will continue to show the same statusMessage)
 21. Create new redux store to save users entries X
   - Update Addentry component to also store the new entry in the redux store
   - How to re-render summery entrie when user adds new entry
 25. Summery Entrie re-renders when "write new entry" button is pressed so the list is not i descending order anymore
-26. Decide on name for app
-27. Update 'Login here' text on CTA component to link to login
-28. Update CTA placeholder text
 
 
 
@@ -52,3 +70,7 @@
 24. New users with no entries will generate error on the site X
 22. Update header when user are logged in X
 23. Create logout function to replace login/signup when user are logged in X
+19. Update Get Started button on CTA to link to sign up. X
+26. Decide on name for app X
+27. Update 'Login here' text on CTA component to link to login X
+28. Update CTA placeholder text X

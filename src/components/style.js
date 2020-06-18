@@ -133,6 +133,7 @@ export const Navbar = styled.div`
   background-color: #2ECC71  ;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
   padding: .5rem 1rem;
+  z-index: 1;
 
   @media (max-width: 768px) {
     background-color: #2ECC71 ;

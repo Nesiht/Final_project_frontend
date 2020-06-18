@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Editor, EditorState, convertToRaw} from 'draft-js';
 // import 'draft-js/dist/Draft.css';
-import '../../node_modules/draft-js/dist/Draft.css'
-import './draft.css'
+// import '../../node_modules/draft-js/dist/Draft.css'
+// import './draft.css'
+import 'components/draft.css'
 
 
 export const Editortest = () => {
@@ -12,11 +13,11 @@ export const Editortest = () => {
   );
 
   return (
-    <>
-      <Editor editorState={editorState} onChange={setEditorState} />
-
+    <div className="RichEditor-root">
+    
+        <Editor editorState={editorState} onChange={setEditorState} />
       {/* {console.log('content state', editorState)} */}
       {console.log(convertToRaw(editorState.getCurrentContent()))}
-    </>
+    </div>
     )
 }

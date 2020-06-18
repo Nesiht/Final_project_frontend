@@ -5,7 +5,7 @@ import { user } from '../reducers/user'
 import { Btn } from 'components/Btn'
 import Draft from 'components/Draft'
 import { Text, Form, Input, Title } from 'components/style'
-import 'react-rangeslider/lib/index.css'
+import 'components/rangeSlider.css'
 import { entrie } from 'reducers/entrie'
 
 import {Editortest} from 'components/Editortest'

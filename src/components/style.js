@@ -18,6 +18,7 @@ export const Container = styled.div`
   margin-left: ${props => props.marginLeft || 'auto'};
   margin-right: ${props => props.marginRight || 'auto'};
   padding-bottom: ${props => props.paddingBottom || ''};
+  padding-top: ${props => props.paddingTop || ''};
   max-width: ${props => props.width || '1144px' };
   background-color: ${props => props.color || 'none'};
   
@@ -130,7 +131,7 @@ export const Navbar = styled.div`
   min-height: 4rem;
   position: sticky;
   top: 0;
-  background-color: #2ECC71  ;
+  background-color: #2ECC71;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
   padding: .5rem 1rem;
   z-index: 1;

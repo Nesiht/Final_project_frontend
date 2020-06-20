@@ -33,11 +33,12 @@ export const Dashboard = () => {
     <>
       {accessToken && 
         <BgContainer>
-          <Container >
-            <Btn title="Write new entry" handleAction={handleClick} />
+          <Container width='80vw'>
+            <AddEntrie />
+            <Container direction='column' paddingTop='5rem'>
+              <SummeryEntrie />
+            </Container>
           </Container>
-          {displayEntryForm && <AddEntrie />}
-          <SummeryEntrie />
         </BgContainer>
       }
     </>

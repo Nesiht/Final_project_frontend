@@ -76,16 +76,19 @@ export const AddEntrie = () => {
     <Form onSubmit={(e) => handleSave(e)}>
       <Title>Write new entry</Title>
       <label>
-        Titel
+        Title
       </label>
       <Input 
         type = "text"
         value = { title }
-        placeholder ="Title"
         onChange = {event => setTitle(event.target.value)}
       />
+
+      <label>
+        Text
+      </label>
       <div className="RichEditor-root">
-        <Editor editorState={editorState} onChange={handleEditor} />
+        <Editor editorState={editorState} onChange={handleEditor}/>
       </div>
 
       <label>
@@ -100,7 +103,7 @@ export const AddEntrie = () => {
         labels = {horizontalLabels}
       />
 
-      <Btn type="submit" title="Send" />
+      <Btn type="submit" title="Save" />
       {statusMessage && <Text small> {`${statusMessage}`} </Text>}
     </Form>
   )

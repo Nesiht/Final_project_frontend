@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux'
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import Moment from 'react-moment'
 import { Container, Text } from 'components/style'
-import 'react-accessible-accordion/dist/fancy-example.css'
+
+import 'components/accordion.css'
 
 export const SummeryEntrie = () => {
   const allUserEntries = useSelector((store) => store.entrie.entries)
@@ -20,16 +21,16 @@ export const SummeryEntrie = () => {
               <Moment format="YYYY-MM-DD">
                 {entry.createdAt}
               </Moment>
-              {entry.title}
+                {entry.title}
             </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>
           {entry.text.blocks.map((item) => {
             return(
-            <Text small key={item.key}>{item.text}</Text>
+            <Text small align='left' key={item.key}>{item.text}</Text>
             )
             })}
-          <Text>Grade: {entry.grade}</Text>
+          <Text small align='left'>Grade: {entry.grade}</Text>
           </AccordionItemPanel>
         </AccordionItem>
       </Accordion>

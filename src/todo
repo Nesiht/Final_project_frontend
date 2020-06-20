@@ -44,12 +44,11 @@ World
 21. Create new redux store to save users entries X
   - Update Addentry component to also store the new entry in the redux store 
   - How to re-render summery entrie when user adds new entry
-26. Style accordion to match the color, width and text formats
 27. Fix accordion to more responesive
 28. Create a dummie database with notes for demo on laptop
-29. Add black border on draft js text editor
-30. Create new container for high resolution to place addentrie and summeryentrie side by side
-31.
+33. Update Draft js to be empty after saving 
+34. Add credits for images
+36. Change color of grade bar depending on value, red = 0-4, lightgreen on 5-7, green on 8-10
 
 
 [DONE]
@@ -79,6 +78,12 @@ World
   - Create on Feartures text
 6. Create Footer component X
 25. Summery Entrie re-renders when "write new entry" button is pressed so the list is not i descending order anymore X
+30. Create new container for high resolution to place addentrie and summeryentrie side by side X
+29. Add black border on draft js text editor X
+32. Update font in draft js editor X
+26. Style accordion to match the color, width and text formats X
+31. Uppdated dashboard for 768 and 480 X
+35. Change "send" to "Save" in addentrie component button X
 
 
 

@@ -10,7 +10,6 @@ import { Logout } from 'components/Logout'
 import { Signup } from 'components/Sigup'
 import { Dashboard } from 'components/Dashboard'
 
-import Draft from 'components/Draft'
 import { entrie } from 'reducers/entrie'
 
 const reducer = combineReducers({
@@ -40,10 +39,6 @@ export const App = () => {
 
           <Route path="/signup" exact>
             <Signup />
-          </Route>
-
-          <Route path="/draft" exact>
-            <Draft />
           </Route>
 
           <Route path="/logout" exact>

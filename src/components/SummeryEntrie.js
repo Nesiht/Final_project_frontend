@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import Moment from 'react-moment'
-import { Container } from 'components/style'
+import { Container, Text } from 'components/style'
 import 'react-accessible-accordion/dist/fancy-example.css'
 
 export const SummeryEntrie = () => {
@@ -24,8 +24,12 @@ export const SummeryEntrie = () => {
             </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>
-          {entry.text}
-          {entry.grade}
+          {entry.text.blocks.map((item) => {
+            return(
+            <Text small key={item.key}>{item.text}</Text>
+            )
+            })}
+          <Text>Grade: {entry.grade}</Text>
           </AccordionItemPanel>
         </AccordionItem>
       </Accordion>

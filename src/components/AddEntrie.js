@@ -21,24 +21,19 @@ export const AddEntrie = () => {
   const userid = useSelector((store) => store.user.login.userId)
   const accessToken = useSelector((store) => store.user.login.accessToken)
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
-
+  const [ title, setTitle ] = useState('')
+  const [ text, setText ] = useState()
+  const [ grade, setGrade ] = useState(5)
   const [editorState, setEditorState] = React.useState(
     () => EditorState.createEmpty(),
   )
 
-  // Converts the current state of editorState to raw data
   const raw = convertToRaw(editorState.getCurrentContent())
   
-  // Handle each change in the form, updates setEditorState with all the data, dispatch the raw data to redux
   const handleEditor = (data) => {
     setEditorState(data)
     dispatch(entrie.actions.setCurrentEntry(raw))
   }
-  
-  
-  const [ title, setTitle ] = useState('')
-  const [ text, setText ] = useState()
-  const [ grade, setGrade ] = useState(5)
   
   const handleSaveSuccess =  (loginResponse) => {
     const statusMessage = JSON.stringify(loginResponse.message)
@@ -49,8 +44,6 @@ export const AddEntrie = () => {
     const message = JSON.stringify(error.message)
     dispatch(user.actions.setStatusMessage({ message }))
   }
-
-
 
   const handleSave = (event) => {
     event.preventDefault();
@@ -91,23 +84,10 @@ export const AddEntrie = () => {
         placeholder ="Title"
         onChange = {event => setTitle(event.target.value)}
       />
-      {/* <label>
-        Text
-      </label> */}
-
-      {/* <Draft /> */}
-      {/* <Editortest /> */}
       <div className="RichEditor-root">
         <Editor editorState={editorState} onChange={handleEditor} />
-        {/* {console.log('content state', editorState)} */}
       </div>
 
-      {/* <Input 
-        type = "text"
-        value = { text }
-        placeholder = "Text"
-        onChange = {event => setText(event.target.value)}
-      /> */}
       <label>
         Grade
       </label>
@@ -120,8 +100,6 @@ export const AddEntrie = () => {
         labels = {horizontalLabels}
       />
 
-      {/* <Draft /> */}
-      
       <Btn type="submit" title="Send" />
       {statusMessage && <Text small> {`${statusMessage}`} </Text>}
     </Form>

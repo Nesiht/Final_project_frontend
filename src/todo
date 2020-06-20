@@ -42,9 +42,14 @@ World
 15. Add more visual information to add entry form (how many chars they can type in each field)
 20. How to reset the statusMessage when going between routes (failed to login will show statusMessage, then going to signup will continue to show the same statusMessage)
 21. Create new redux store to save users entries X
-  - Update Addentry component to also store the new entry in the redux store
+  - Update Addentry component to also store the new entry in the redux store 
   - How to re-render summery entrie when user adds new entry
-25. Summery Entrie re-renders when "write new entry" button is pressed so the list is not i descending order anymore
+26. Style accordion to match the color, width and text formats
+27. Fix accordion to more responesive
+28. Create a dummie database with notes for demo on laptop
+29. Add black border on draft js text editor
+30. Create new container for high resolution to place addentrie and summeryentrie side by side
+31.
 
 
 [DONE]
@@ -73,6 +78,7 @@ World
 4. Create Features description component X
   - Create on Feartures text
 6. Create Footer component X
+25. Summery Entrie re-renders when "write new entry" button is pressed so the list is not i descending order anymore X
 
 
 

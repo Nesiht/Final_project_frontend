@@ -22,7 +22,6 @@ export const AddEntrie = () => {
   const accessToken = useSelector((store) => store.user.login.accessToken)
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
   const [ title, setTitle ] = useState('')
-  const [ text, setText ] = useState()
   const [ grade, setGrade ] = useState(5)
   const [editorState, setEditorState] = React.useState(
     () => EditorState.createEmpty(),
@@ -35,9 +34,10 @@ export const AddEntrie = () => {
     dispatch(entrie.actions.setCurrentEntry(raw))
   }
   
-  const handleSaveSuccess =  (loginResponse) => {
-    const statusMessage = JSON.stringify(loginResponse.message)
+  const handleSaveSuccess =  (response) => {
+    const statusMessage = JSON.stringify(response.message)
     dispatch(user.actions.setStatusMessage({ statusMessage }))
+    dispatch(entrie.actions.setUpdate())
   }
   
   const ErrorMessage = (error) => {
@@ -46,7 +46,7 @@ export const AddEntrie = () => {
   }
 
   const handleSave = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     fetch(entrieUrl, {
       method: 'POST',
@@ -57,7 +57,7 @@ export const AddEntrie = () => {
       .then((json) => handleSaveSuccess(json)) 
       .catch((err) => ErrorMessage(err))
       setTitle('')
-      setText('')
+      setEditorState(() => EditorState.createEmpty())
       setGrade('5')
   };
 

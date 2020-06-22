@@ -38,17 +38,8 @@ Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
 World
 
 
-10. Sign up form update, email validation
 15. Add more visual information to add entry form (how many chars they can type in each field)
-20. How to reset the statusMessage when going between routes (failed to login will show statusMessage, then going to signup will continue to show the same statusMessage)
-21. Create new redux store to save users entries X
-  - Update Addentry component to also store the new entry in the redux store 
-  - How to re-render summery entrie when user adds new entry
-27. Fix accordion to more responesive
-28. Create a dummie database with notes for demo on laptop
-33. Update Draft js to be empty after saving 
 34. Add credits for images
-36. Change color of grade bar depending on value, red = 0-4, lightgreen on 5-7, green on 8-10
 
 
 [DONE]
@@ -84,6 +75,17 @@ World
 26. Style accordion to match the color, width and text formats X
 31. Uppdated dashboard for 768 and 480 X
 35. Change "send" to "Save" in addentrie component button X
+21. Create new redux store to save users entries X
+  - Update Addentry component to also store the new entry in the redux store X
+  - How to re-render summery entrie when user adds new entry X
+33. Update Draft js to be empty after saving X
+28. Create a dummie database with notes for demo on laptop X
+27. Fix accordion to more responesive X
+
+[DELETED]
+36. Change color of grade bar depending on value, red = 0-4, lightgreen on 5-7, green on 8-10
+10. Sign up form update, email validation
+20. How to reset the statusMessage when going between routes (failed to login will show statusMessage, then going to signup will continue to show the same statusMessage)
 
 
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import Moment from 'react-moment'
-import { Container, Text } from 'components/style'
+import { Container, Text, AccordionTitle } from 'components/style'
 
 import 'components/accordion.css'
 
@@ -20,7 +20,7 @@ export const SummeryEntrie = () => {
             <AccordionItemButton>
               <Moment format="YYYY-MM-DD">
                 {entry.createdAt}
-              </Moment>
+              </Moment>- 
                 {entry.title}
             </AccordionItemButton>
           </AccordionItemHeading>

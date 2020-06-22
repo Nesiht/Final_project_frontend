@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = { 
   entries: [],
-  currentEntry: []
+  currentEntry: [],
+  update: true
 }
 
 export const entrie = createSlice({
@@ -16,8 +17,9 @@ export const entrie = createSlice({
       // state.entries = { _id, CreatedAt, title, text, grade }
       state.entries = action.payload
     },
-    setNewEntry: (state, action) => {
-      console.log(`Adding new entry to redux`)
+    setUpdate: (state, action) => {
+      console.log(`Toggle update`)
+      state.update = !state.update
     },
     setCurrentEntry: (state, action) => {
       console.log(`Saving current entry to redux`)

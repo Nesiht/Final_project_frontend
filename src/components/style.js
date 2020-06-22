@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 export const BgContainer = styled.div`
@@ -203,7 +203,6 @@ export const Formentry = styled.form`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  // max-width: 50vw;
   width: 450px;
   margin-left: auto;
   margin-right: auto;
@@ -211,7 +210,7 @@ export const Formentry = styled.form`
 
   @media (max-width: 768px) {
     max-width: 614px;
-    width: 400px;
+    width: 614px;
   }
 
   @media (max-width: 480px) {

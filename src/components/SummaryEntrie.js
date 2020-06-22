@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import Moment from 'react-moment'
-import { Container, Text, AccordionTitle, Title } from 'components/style'
+import { Container, Text, Title } from 'components/style'
 
 import 'components/accordion.css'
 
@@ -11,7 +11,7 @@ export const SummaryEntrie = () => {
 
   return (
     <>
-    <Title size='2em'>Summary</Title>
+    {allUserEntries.length > 0 && <Title size='2em'>Summary</Title>}
     {allUserEntries.length > 0 &&
       allUserEntries.map((entry) => (
     <Container key={entry._id}>

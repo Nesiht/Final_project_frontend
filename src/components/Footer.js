@@ -15,6 +15,9 @@ export const Footer = () => {
         <Text small paddingLeft='20px'>
           <StyledLink to="/portfolio">Portfolio</StyledLink>
         </Text>
+        <Text small paddingLeft='20px'>
+          <StyledLink to="/credits">Credits</StyledLink>
+        </Text>
       </Container>
       <Container marginLeft='none' marginRight='none' justify='flex-start' >
         <Text small paddingLeft='20px'>Founded in 2020, Hench is the largest, most trusted online workout diary for everyone!</Text>

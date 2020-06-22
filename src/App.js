@@ -9,6 +9,7 @@ import { Login } from 'components/Login'
 import { Logout } from 'components/Logout'
 import { Signup } from 'components/Sigup'
 import { Dashboard } from 'components/Dashboard'
+import { Credits } from 'components/Credits'
 
 import { entrie } from 'reducers/entrie'
 
@@ -63,6 +64,10 @@ export const App = () => {
             window.location.href = 'https://admiring-keller-af310d.netlify.app/'; 
             return null;
           }}/>
+
+          <Route path="/credits" exact>
+            <Credits />
+          </Route>
 
           <Route path="/url/:variable" exact>
             {/* UNIQUE COMPONENT HERE FOR EXAMPLE */}

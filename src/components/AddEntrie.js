@@ -76,11 +76,12 @@ export const AddEntrie = () => {
     <Formentry onSubmit={(e) => handleSave(e)}>
       <Title size='2em'>Write new entry</Title>
       <label>
-        Title
+        Title {title.length}/20
       </label>
       <Input 
         type = "text"
         value = { title }
+        maxLength = {20}
         onChange = {event => setTitle(event.target.value)}
       />
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container, Text, StyledLink, Svg } from 'components/style'
 
-
 export const Credits = () => {
   return (
     <Container>

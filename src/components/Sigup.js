@@ -13,7 +13,6 @@ export const Signup = () => {
   const [ password, setPassword ] = useState('')
   const dispatch = useDispatch()
   const history = useHistory()
-
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
 
   const handleLoginSuccess = (loginResponse) => {

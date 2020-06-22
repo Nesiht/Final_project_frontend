@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { entrie } from '../reducers/entrie'
-import { SummeryEntrie } from 'components/SummeryEntrie'
+import { SummaryEntrie } from 'components/SummaryEntrie'
 import { Container, BgContainer } from 'components/style'
-
-// Test
 import { AddEntrie } from 'components/AddEntrie'
 
 export const Dashboard = () => {
@@ -32,7 +30,7 @@ export const Dashboard = () => {
           <Container width='80vw'>
             <AddEntrie />
             <Container direction='column' paddingTop='5rem'>
-              <SummeryEntrie />
+              <SummaryEntrie />
             </Container>
           </Container>
         </BgContainer>

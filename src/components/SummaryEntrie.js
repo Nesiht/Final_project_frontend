@@ -2,15 +2,16 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import Moment from 'react-moment'
-import { Container, Text, AccordionTitle } from 'components/style'
+import { Container, Text, AccordionTitle, Title } from 'components/style'
 
 import 'components/accordion.css'
 
-export const SummeryEntrie = () => {
+export const SummaryEntrie = () => {
   const allUserEntries = useSelector((store) => store.entrie.entries)
 
   return (
     <>
+    <Title size='2em'>Summary</Title>
     {allUserEntries.length > 0 &&
       allUserEntries.map((entry) => (
     <Container key={entry._id}>

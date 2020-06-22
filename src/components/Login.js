@@ -10,11 +10,9 @@ const logInURL = "http://localhost:8080/sessions"
 export const Login = () => {
   const dispatch = useDispatch()
   const history = useHistory()
-
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
   const accessToken = useSelector((store) => store.user.login.accessToken)
   const userId = useSelector((store) => store.user.login.userId)
-  
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
 
@@ -75,7 +73,7 @@ export const Login = () => {
           onChange = {event => setPassword(event.target.value)}
         />
   
-        <Btn type="submit" title="Log in" />
+        <Btn type="submit" title="Login" />
         {statusMessage && <Text small> {`${statusMessage}`} </Text>}
         </Form>
       }

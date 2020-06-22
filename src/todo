@@ -38,8 +38,6 @@ Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
 World
 
 
-15. Add more visual information to add entry form (how many chars they can type in each field)
-34. Add credits for images
 
 
 [DONE]
@@ -81,6 +79,10 @@ World
 33. Update Draft js to be empty after saving X
 28. Create a dummie database with notes for demo on laptop X
 27. Fix accordion to more responesive X
+34. Add credits for images X
+15. Add more visual information to add entry form (how many chars they can type in each field) X
+
+
 
 [DELETED]
 36. Change color of grade bar depending on value, red = 0-4, lightgreen on 5-7, green on 8-10

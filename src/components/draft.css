@@ -1,6 +1,5 @@
 .RichEditor-root {
   background: #fff;
-  /* font-family: 'Georgia', serif; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
   sans-serif;
@@ -67,7 +66,6 @@
 .RichEditor-activeButton {
   color: #5890ff;
 }
-
 
 @media screen and (max-width: 480px) {
   .RichEditor-root {

@@ -10,7 +10,6 @@ import { Logout } from 'components/Logout'
 import { Signup } from 'components/Sigup'
 import { Dashboard } from 'components/Dashboard'
 import { Credits } from 'components/Credits'
-
 import { entrie } from 'reducers/entrie'
 
 const reducer = combineReducers({
@@ -68,11 +67,7 @@ export const App = () => {
           <Route path="/credits" exact>
             <Credits />
           </Route>
-
-          <Route path="/url/:variable" exact>
-            {/* UNIQUE COMPONENT HERE FOR EXAMPLE */}
-          </Route>
-        
+       
         </Switch>
       </BrowserRouter>
     </Provider>

@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom'
 
-// #27AE60 (Darker)
-// #2ECC71 (Lighter)
-// CTA
 export const BgContainer = styled.div`
   background: linear-gradient(to right bottom,#f7f5fb 50%,#fff 50%);
   padding-top: 5rem;
@@ -27,13 +24,6 @@ export const Container = styled.div`
     margin-left: none;
     margin-right: none;
   }
-
-  @media (max-width: 480px) {
-  }
-
-  @media (max-width: 375px) {
-    max-width: 300px;
-  }
 `
 
 export const Focus = styled.div`
@@ -49,9 +39,6 @@ export const Focus = styled.div`
     padding-left: 15px;
     padding-top: 15px;
   }
-
-  @media (max-width: 480px) {
-  }
 `
 
 export const Side = styled.div`
@@ -66,10 +53,6 @@ export const Side = styled.div`
     max-width: 100vw;
     order: 1;
     padding-right: 0;
-  }
-
-  @media (max-width: 480px) {
-
   }
 `
 
@@ -118,8 +101,6 @@ export const Svg = styled.svg`
   }
 `
 
-
-// HEADER
 export const Navbar = styled.div`
   display: flex;
   flex-direction: row;
@@ -147,7 +128,6 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
   cursor: pointer;
   padding-right: .5rem;
-  // padding-left: .5rem;
   padding-left: ${props => props.paddingLeft || '.5rem'};
 
   &.active {
@@ -156,17 +136,12 @@ export const StyledLink = styled(NavLink)`
     text-decoration: underline;
   }
 
-  @media (max-width: 768px) {
-  }
-
   @media (max-width: 480px) {
     display: ${props => props.hidemobile ? 'none' : ''} ;
   }
   
 `
 
-
-// BTN
 export const Button = styled.button`
   background-color: #2ECC71 ;
   border: 1px solid transparent;
@@ -192,8 +167,6 @@ export const Button = styled.button`
     max-width: 100vw;
   }
 `
-
-// SIGNUP
 
 export const Form = styled.form`
   display: flex;

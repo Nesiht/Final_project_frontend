@@ -1,18 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Slider from 'react-rangeslider'
-import { user } from '../reducers/user'
 import { Btn } from 'components/Btn'
 import { Text, Formentry, Input, Title } from 'components/style'
-import 'components/rangeSlider.css'
+import Slider from 'react-rangeslider'
+import { Editor, EditorState, convertToRaw } from 'draft-js'
+import { user } from '../reducers/user'
 import { entrie } from 'reducers/entrie'
-
-import {Editor, EditorState, convertToRaw} from 'draft-js'
 import 'components/draft.css'
-
-// Städa
-// Lyckade meddelande fuckar up summeryentry när den ska hämta och lista entrys
-// Kolla igenom koden en gång till
+import 'components/rangeSlider.css'
 
 const entrieUrl = "http://localhost:8080/entries"
 
@@ -23,10 +18,7 @@ export const AddEntrie = () => {
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
   const [ title, setTitle ] = useState('')
   const [ grade, setGrade ] = useState(5)
-  const [editorState, setEditorState] = React.useState(
-    () => EditorState.createEmpty(),
-  )
-
+  const [editorState, setEditorState] = React.useState(() => EditorState.createEmpty())
   const raw = convertToRaw(editorState.getCurrentContent())
   
   const handleEditor = (data) => {

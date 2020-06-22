@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Slider from 'react-rangeslider'
 import { user } from '../reducers/user'
 import { Btn } from 'components/Btn'
-import { Text, Form, Input, Title } from 'components/style'
+import { Text, Formentry, Input, Title } from 'components/style'
 import 'components/rangeSlider.css'
 import { entrie } from 'reducers/entrie'
 
@@ -73,8 +73,8 @@ export const AddEntrie = () => {
 
 
    return (
-    <Form onSubmit={(e) => handleSave(e)}>
-      <Title>Write new entry</Title>
+    <Formentry onSubmit={(e) => handleSave(e)}>
+      <Title size='2em'>Write new entry</Title>
       <label>
         Title
       </label>
@@ -105,6 +105,6 @@ export const AddEntrie = () => {
 
       <Btn type="submit" title="Save" />
       {statusMessage && <Text small> {`${statusMessage}`} </Text>}
-    </Form>
+    </Formentry>
   )
 }

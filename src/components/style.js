@@ -74,13 +74,12 @@ export const Side = styled.div`
 `
 
 export const Title = styled.h1`
-  font-size: 4rem;
+  font-size: ${props => props.size || '4rem'};
   line-height: 1;
   font-weight: 500;
   margin-top: 0;
 
   @media (max-width: 768px) {
-    // font-size: calc(1.5rem + 3.3vw);
     font-size: ${props => props.small ? 'calc(1rem + 2vw)' : 'calc(1.5rem + 3.3vw)' };
   }
 
@@ -93,8 +92,6 @@ export const Text = styled.p`
   font-size: ${props => props.small ? '0.9rem' : '1.5rem' };
   text-align: ${props => props.align || 'left'};
   font-weight: ${props => props.bold ? '800' : '400'};
-  // Maybe remove this
-  // margin-bottom: 1.5rem;
   line-height: 1.5;
   padding-right: ${props => props.paddingRight || '0'};
   padding-left: ${props => props.paddingLeft || '0'};
@@ -209,6 +206,7 @@ export const Form = styled.form`
 
   @media (max-width: 768px) {
     max-width: 614px;
+    width: 400px;
   }
 
   @media (max-width: 480px) {
@@ -225,5 +223,25 @@ export const Input = styled.input`
 
   &:focus {
   background-color: #AED6F1;
+  }
+`
+
+export const Formentry = styled.form`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  // max-width: 50vw;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3rem;
+
+  @media (max-width: 768px) {
+    max-width: 614px;
+    width: 400px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 384px;
   }
 `

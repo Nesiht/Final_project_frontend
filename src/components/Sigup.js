@@ -5,7 +5,7 @@ import { Btn } from 'components/Btn'
 import { user } from '../reducers/user'
 import { Form, Title, Input, Text } from 'components/style'
 
-const signUpUrl = "http://localhost:8080/users"
+const signUpUrl = "https://final-project-backend-v1.herokuapp.com/users"
 
 export const Signup = () => {
   const [ name, setName ] = useState('')

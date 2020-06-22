@@ -9,7 +9,7 @@ import { entrie } from 'reducers/entrie'
 import 'components/draft.css'
 import 'components/rangeSlider.css'
 
-const entrieUrl = "http://localhost:8080/entries"
+const entrieUrl = "https://final-project-backend-v1.herokuapp.com/entries"
 
 export const AddEntrie = () => {
   const dispatch = useDispatch()

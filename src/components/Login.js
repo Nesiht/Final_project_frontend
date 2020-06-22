@@ -5,7 +5,7 @@ import { user } from '../reducers/user'
 import { Btn } from 'components/Btn'
 import { Form, Input, Title, Text } from 'components/style'
 
-const logInURL = "http://localhost:8080/sessions"
+const logInURL = "https://final-project-backend-v1.herokuapp.com/sessions"
 
 export const Login = () => {
   const dispatch = useDispatch()

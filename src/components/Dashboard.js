@@ -10,7 +10,7 @@ export const Dashboard = () => {
   const toggleUpdate = useSelector((store) => store.entrie.update)
   const accessToken = useSelector((store) => store.user.login.accessToken)
   const userid = useSelector((store) => store.user.login.userId)
-  const entrieUrl = `http://localhost:8080/entries/${userid}`
+  const entrieUrl = `https://final-project-backend-v1.herokuapp.com/entries/${userid}`
 
   useEffect(() => {
     fetch(entrieUrl, {

@@ -18,9 +18,7 @@ export const Dashboard = () => {
       headers: { 'Content-Type': 'application/json', Authorization: accessToken },
     })
       .then((res) => res.json())
-      .then((data) => {
-        dispatch(entrie.actions.setAllEntries(data))
-      })
+      .then((data) => dispatch(entrie.actions.setAllEntries(data)))
    }, [toggleUpdate])
   
   return (

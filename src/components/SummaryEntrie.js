@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import Moment from 'react-moment'
 import { Container, Text, Title } from 'components/style'
-
 import 'components/accordion.css'
 
 export const SummaryEntrie = () => {

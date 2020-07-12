@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Btn } from 'components/Btn'
 import { Text, Formentry, Input, Title } from 'components/style'
 import Slider from 'react-rangeslider'
+import Calendar from 'react-calendar'
 import { Editor, EditorState, convertToRaw } from 'draft-js'
 import { user } from '../reducers/user'
 import { entrie } from 'reducers/entrie'
 import 'components/draft.css'
 import 'components/rangeSlider.css'
+import 'components/Calendar.css'
 
 const entrieUrl = "https://final-project-backend-v1.herokuapp.com/entries"
 
@@ -18,6 +20,7 @@ export const AddEntrie = () => {
   const statusMessage = useSelector((store) => store.user.login.statusMessage)
   const [ title, setTitle ] = useState('')
   const [ grade, setGrade ] = useState(5)
+  const [ date, setDate ] = useState(new Date())
   const [editorState, setEditorState] = React.useState(() => EditorState.createEmpty())
   const raw = convertToRaw(editorState.getCurrentContent())
   
@@ -42,7 +45,7 @@ export const AddEntrie = () => {
 
     fetch(entrieUrl, {
       method: 'POST',
-      body: JSON.stringify({ title , text: raw , grade: +grade , userid }),
+      body: JSON.stringify({ title , text: raw , grade: +grade , userid, date }),
       headers: { 'Content-Type': 'application/json', Authorization: accessToken },
     })
       .then((res) => res.json())
@@ -77,6 +80,11 @@ export const AddEntrie = () => {
         onChange = {event => setTitle(event.target.value)}
       />
 
+      <Calendar
+        onChange={setDate}
+        value={date}
+      />
+
       <label>
         Text
       </label>
@@ -98,6 +106,7 @@ export const AddEntrie = () => {
 
       <Btn type="submit" title="Save" />
       {statusMessage && <Text small> {`${statusMessage}`} </Text>}
+      {console.log(date)}
     </Formentry>
   )
 }
